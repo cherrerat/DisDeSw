@@ -45,13 +45,10 @@
 	</div>
 	<div id="cajamayor" class="align-middle">
 		<div id="contenedorbusqueda" class="card rounded align-middle">
-			<span id="busquedaprincipal">Busqueda de bus</span>
-			<select class="custom-select" id="select" readonly>
-				<option id="nviaje">N° de viaje</option>
-				<option id="patente">Patente</option>
-			</select>
-			<input id="datobusqueda" type="text" name="datobusqueda" class="justify-content-center form-control" placeholder="Ingrese los datos de busqueda" readonly >
-			<input type="submit" name="enviar" id="enviar" class="btn btn-dark">
+            <span id="busquedaprincipal">Busqueda de bus</span>
+            {!! Form::select('formatoBusqueda', ['nviaje' => 'N° de viaje', 'patente' => 'Patente'], 'nviaje', ['class' => 'custom-select', 'id' => 'select'])!!}
+            {!! Form::text('datobusqueda', null, ['class' => 'justify-content-center form-control', 'id' => 'datobusqueda', 'placeholder' => 'Ingrese los datos de busqueda'])!!}
+            {!! Form::submit('Enviar', ['class' => 'btn btn-success', 'id' => 'enviar'])!!}
 		</div>
 		<div id="map"></div>
 	</div>

@@ -1,7 +1,8 @@
 *{
   -webkit-box-sizing: content-box;
      -moz-box-sizing: content-box;
-          box-sizing: content-box;
+		  box-sizing: content-box;
+	font-family: 'Open Sans', sans-serif;
 
 }
 #cajamayor
@@ -119,6 +120,8 @@ html, body
 }	
 #navbar{
 	background-color: #000;
+	padding: 0;
+	margin: 0;
 }
 #session{
 	color: #fafafa;
@@ -136,6 +139,8 @@ html, body
 .navbar
 {
 	width: auto;
+	padding: 0;
+	margin: 0;
 }
 .btnSession
 {
@@ -143,7 +148,9 @@ html, body
 	padding: 0;
 	border: none;
 	background: none;
-	margin-left: 74em;
+	font-size: 0.8em;
+	margin: 0;
+	margin-left: 93%;
 }
 
 .btnSession:hover
