@@ -12,5 +12,5 @@
 */
 
 Route::get('/', function () {
-    return view('hyf.headerDash');
+    return view('dashboardCarabinero');
 });

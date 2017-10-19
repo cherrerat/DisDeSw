@@ -1,0 +1,19 @@
+#formularioPrueba
+{
+    height: 100% !important;
+}
+#formCentrado
+{
+    margin-left: 25%;
+}
+#submitCentrado
+{
+    margin-left: 50%;
+    margin-top: 20px;
+}
+#dashboardLogo
+{
+    height: 50px;
+    width: 50px;
+    margin-left: 35%;
+}

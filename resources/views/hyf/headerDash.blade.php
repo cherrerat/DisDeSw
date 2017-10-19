@@ -4,27 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>@yield('titulo') | Documento de busqueda</title>
 
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href=" {{ URL::asset('css/adminlte/bootstrap/dist/css/bootstrap.min.css') }} ">
-  <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">-->
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ URL::asset('css/adminlte/font-awesome/css/font-awesome.min.css') }}">
-  <!--<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">-->
   <!-- Ionicons -->
   <link rel="stylesheet" href="{{ URL::asset('css/adminlte/Ionicons/css/ionicons.min.css') }}">
-  <!--<link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">-->
   <!-- jvectormap -->
   <link rel="stylesheet" href="{{ URL::asset('css/adminlte/jvectormap/jquery-jvectormap.css') }}">
-  <!--<link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">-->
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ URL::asset('css/adminlte/AdminLTE.min.css') }}">
-  <!-- <link rel="stylesheet" href="dist/css/AdminLTE.min.css">-->
   <!-- AdminLTE Skins. Choose a skin from the css/skins
   folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="{{ URL::asset('css/adminlte/skins/_all-skins.min.css') }}">
-  <!-- <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css"> -->
       <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -34,6 +28,8 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="{{ URL::asset('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic') }}">
+  <!-- Style de prueba -->
+  <link rel="stylesheet" href="{{ URL::asset('css/prueba.css') }}">
 </head>
 <body>
     
@@ -46,9 +42,10 @@
             <!-- Logo -->
             <a href="index2.html" class="logo">
               <!-- mini logo for sidebar mini 50x50 pixels -->
-              <span class="logo-mini"><b>SCIT</b></span>
+              <img src="{{ URL::asset('img/user2-160x160.jpg') }}" alt="@yield('imagenDashboard')" class="logo-mini" id="dashboardLogo")>
               <!-- logo for regular state and mobile devices -->
-              <span class="logo-lg"><b>SCIT</b></span>
+              <!--<span class="logo-lg"><b>SCIT</b></span>-->
+              <img src="{{ URL::asset('img/user2-160x160.jpg') }}" alt="@yield('imagenDashboard')" class="logo-lg" id="dashboardLogo")>
             </a>
         
             <!-- Header Navbar: style can be found in header.less -->
@@ -84,13 +81,13 @@
                   <!-- Sidebar derecho perfil-->
                   <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                      <img src=" {{ URL::asset('img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
                       <span class="hidden-xs">Usuario random</span>
                     </a>
                     <ul class="dropdown-menu">
                       <!-- User image -->
                       <li class="user-header">
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                      <img src=" {{ URL::asset('img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
         
                         <p>
                           Ricardo Cesped - Chupapico
@@ -136,28 +133,6 @@
           <aside class="main-sidebar">
             <!-- sidebar: style can be found in sidebar.less -->
             <section class="sidebar">
-              <!-- Foto de perfil sidebar izquierdo -->
-              <div class="user-panel">
-                <div class="pull-left image">
-                  <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                </div>
-                <div class="pull-left info">
-                  <p>Usuario 1</p>
-                  <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                </div>
-              </div>
-              <!-- search form -->
-              <form action="#" method="get" class="sidebar-form">
-                <div class="input-group">
-                  <input type="text" name="q" class="form-control" placeholder="Search...">
-                  <span class="input-group-btn">
-                        <button type="submit" name="search" id="search-btn" class="btn btn-flat">
-                          <i class="fa fa-search"></i>
-                        </button>
-                      </span>
-                </div>
-              </form>
-              <!-- /.search form -->
               <!-- sidebar menu: : style can be found in sidebar.less -->
               <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN NAVIGATION</li>
@@ -175,6 +150,7 @@
                     <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
                     <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
                   </ul>
+                  @section('navBar')
                 </li>
               </ul>
             </section>
@@ -188,17 +164,7 @@
               <h1>HOLA</h1>
             </section>
             <section class="content">
-              <div class="row">
-                <div class="col-md-12 col-sm-6 col-xs-12">
-                  <div class="info-box">
-                    <div class="info-box-content">
-                      <div class="chart-container" style="position:relative; height:40hv; width:80vw">
-                        <canvas class="chart"></canvas>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              @section('cuerpa')
             </section>        
 
           </div>
@@ -224,35 +190,24 @@
 
 <!-- jQuery 3 -->
 <script src="{{ URL::asset('js/adminlte/jquery/dist/jquery.min.js') }}"></script>
-<!--<script src="bower_components/jquery/dist/jquery.min.js"></script>-->
 <!-- Bootstrap 3.3.7 -->
 <script src="{{ URL::asset('js/adminlte/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-<!--<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
 <!-- FastClick -->
 <script src="{{ URL::asset('js/adminlte/fastclick/lib/fastclick.js') }}"></script>
-<!--<script src="bower_components/fastclick/lib/fastclick.js"></script>-->
 <!-- AdminLTE App -->
 <script src="{{ URL::asset('js/adminlte/adminlte.min.js') }}"></script>
-<!--<script src="dist/js/adminlte.min.js"></script>-->
 <!-- Sparkline -->
 <script src="{{ URL::asset('js/adminlte/jquery-sparkline/dist/jquery.sparkline.min.js') }}"></script>
-<!--<script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>-->
 <!-- jvectormap  -->
 <script src="{{ URL::asset('js/adminlte/jvectormap/jquery-jvectormap-1.2.2.min.js') }}"></script>
 <script src="{{ URL::asset('js/adminlte/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
-<!--<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>-->
-<!--<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>-->
 <!-- SlimScroll -->
 <script src="{{ URL::asset('js/adminlte/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
-<!--<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>-->
 <!-- ChartJS -->
 <script src="{{ URL::asset('js/adminlte/Chart.js/Chart.js') }}"></script>
-<!--<script src="bower_components/Chart.js/Chart.js"></script>-->
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ URL::asset('js/adminlte/dashboard2.js') }}"></script>
-<!--<script src="dist/js/pages/dashboard2.js"></script>-->
 <!-- AdminLTE for demo purposes -->
 <script src="{{ URL::asset('js/adminlte/demo.js') }}"></script>
-<!--<script src="dist/js/demo.js"></script>-->
 </body>
 </html>
