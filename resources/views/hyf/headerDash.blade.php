@@ -19,6 +19,8 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
   folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="{{ URL::asset('css/adminlte/skins/_all-skins.min.css') }}">
+  <!--CSS DEL MAPA -->
+  <link rel="stylesheet" href="{{ URL::asset('css/map.css') }}">
       <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -134,25 +136,8 @@
             <!-- sidebar: style can be found in sidebar.less -->
             <section class="sidebar">
               <!-- sidebar menu: : style can be found in sidebar.less -->
-              <ul class="sidebar-menu" data-widget="tree">
-                <li class="header">MAIN NAVIGATION</li>
-                <li class="treeview">
-                  <a href="#">
-                    <i class="fa fa-files-o"></i>
-                    <span>Layout Options</span>
-                    <span class="pull-right-container">
-                      <span class="label label-primary pull-right">4</span>
-                    </span>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-                    <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-                    <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-                    <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
-                  </ul>
-                  @section('navBar')
-                </li>
-              </ul>
+                @section('barraDeNavegacion')
+                @show
             </section>
             <!-- /.sidebar -->
           </aside>
@@ -165,6 +150,7 @@
             </section>
             <section class="content">
               @section('cuerpa')
+              @show
             </section>        
 
           </div>
