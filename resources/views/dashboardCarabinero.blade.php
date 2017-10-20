@@ -67,6 +67,52 @@
 @section('cuerpa')
 
 <div class="cointainer col-md-11" id="contenedorMapa">
-  <div id="map" ></div>
+
+  {!! Form::open(['url' => '']) !!}
+    <div class="form-group col-md-8">
+      {!! Form::select('formatoBusqueda', ['patente'=>'Patente', 'nviaje'=> 'N° viaje'],'patente', ['class'=>'form-control', 'id'=>'opbus']) !!}
+      {!! Form::text('datobusqueda', null, ['class' => 'form-control', 'id' => 'datobusqueda', 'placeholder' => 'Ingrese dato de busqueda']) !!}
+      
+      <button type="submit" class="btn btn-danger" id="btnB">Buscar</button>
+    </div>
+  {!! Form::close() !!}
+  <div class="col-md-11">
+  
+  <div class="container">
+  <h2>Viaje n°12032</h2>          
+  <p>Datos chofer y viaje</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>RUN</th>
+        <th>Nombre</th>
+        <th>Lugar Origen</th>
+        <th>Lugar destino</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+  </div>
+  
+  <div id="map"></div>
 </div>
 @endsection

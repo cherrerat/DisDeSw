@@ -50,6 +50,7 @@
             {!! Form::text('datobusqueda', null, ['class' => 'justify-content-center form-control', 'id' => 'datobusqueda', 'placeholder' => 'Ingrese los datos de busqueda'])!!}
             {!! Form::submit('Enviar', ['class' => 'btn btn-success', 'id' => 'enviar'])!!}
 		</div>
+		
 		<div id="map"></div>
 	</div>
 @endsection()
