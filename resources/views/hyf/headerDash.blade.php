@@ -195,5 +195,7 @@
 <script src="{{ URL::asset('js/adminlte/dashboard2.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ URL::asset('js/adminlte/demo.js') }}"></script>
+<!-- MAP -->
+<script src="{{ URL::asset('js/map.js') }}"></script>
 </body>
 </html>

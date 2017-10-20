@@ -62,8 +62,7 @@
   
 @section('cuerpa')
 
-<div id="cajamayor" class="align-middle col-md-12">
-  <div class="map"></div>
+<div class="cointainer col-md-11" id="contenedorMapa">
+  <div id="map" ></div>
 </div>
-<script src="{{ URL::asset('js/map.js') }}"></script>
 @endsection
