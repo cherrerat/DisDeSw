@@ -146,7 +146,8 @@
           <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content-header">
-              <h1>HOLA</h1>
+              @section('headerRuta')
+              @show()
             </section>
             <section class="content">
               @section('cuerpa')

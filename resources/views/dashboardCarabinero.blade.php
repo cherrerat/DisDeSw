@@ -2,7 +2,11 @@
 
 @section('titulo', 'Carabineros de Chile')
 
-
+@section('headerRuta')
+  <div class="col-md-11 row">
+    <h4 class="h4"><a href="">Carabineros de Chile</a> -> <a href="#">Busqueda bus</a> </h4>
+  </div>
+@endsection()
 @section('barraDeNavegacion')
 
               <ul class="sidebar-menu" data-widget="tree">
