@@ -73,6 +73,27 @@
 
 @section('cuerpa')
     <div class="container col-md-11">
+        <div class="box" id="boxPrincipal">
+            <!-- Box header -->
+            <div class="box-header">
+                <h3 class="box-title">Datos pasajero: </h3> 
+            </div><!-- /Box header -->
+            <!-- Box body -->
+            <div class="box-body">
+                <div class="col-md-9" id="contenedorDatos">
+                    {!! Form::label('namePasajero', 'Nombre de pasajero: ', ['class' => 'labelInput']) !!}
+                    {!! Form::text('namePasajero', null, ['class' => 'inputText form-control', 'id' => 'nombrePasajero', 'readonly']) !!}
+                    {!! Form::label('edad', 'Edad: ', ['class' => 'labelInputR']) !!}
+                    {!! Form::text('namePasajero', null, ['class' => 'numberInput form-control', 'id' => 'edadPasajero', 'readonly']) !!}</br>
+                    {!! Form::label('addressPasajero', 'Dirección pasajero: ', ['class' => 'labelInput']) !!}
+                    {!! Form::text('addressPasajero', null, ['class' => 'inputText form-control', 'id' => 'direccionPasajero', 'readonly']) !!}
+                    {!! Form::label('profugo',null,['class' => 'labelInputR', 'id' => 'profugo']) !!}
+                    {!! Form::checkbox('profugo','value', true, ['class' => 'checkboxInput', 'onclick' => 'return false;' ]) !!}</br>
+                </div>
+            </div><!-- /Box body -->
+        </div><!-- /Box -->
+    </div><!-- /container -->
+    <div class="container col-md-11">
         <div class="box" id="boxPrincipal   ">
             <div class="box-header with-border" id="headerDelBox">
                 <h3 class="box-title">HISTORIAL DE VIAJES RUN XX.XXX.XXX-X</h3>

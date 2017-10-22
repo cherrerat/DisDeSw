@@ -6,3 +6,48 @@
 {
     font-family: FontAwesome;
 }
+#contenedorDatos 
+{
+    margin: 0 auto;
+}
+.labelInput
+{
+    text-align: right;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.labelInputR
+{
+    text-align: right;
+    margin-left: 25%;
+    margin-bottom: 10px;
+}
+.inputText
+{
+    width: 20%;
+    display: inline;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: #8F9091;
+    border: none;
+}
+.numberInput 
+{
+    width: 5%;
+    display: inline;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: #8F9091;
+    border: none;
+}
+.checkboxInput
+{
+    margin-left: 15px;
+    margin-bottom: 10px;
+    display: inline;
+    border-radius: 4px;
+    background-color: #8F9091;
+    border: none;
+}
