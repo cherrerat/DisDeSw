@@ -30,12 +30,8 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="{{ URL::asset('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic') }}">
-  <!-- Style de prueba -->
-  <link rel="stylesheet" href="{{ URL::asset('css/prueba.css') }}">
-</head>
-<body>
-    
-
+  @section('css')
+  @show
 
     <div class="wrapper">
         
@@ -129,7 +125,12 @@
                 </ul>
               </div>
         
-            </nav>
+            </nav>rueba -->
+  <link rel="stylesheet" href="{{ URL::asset('css/prueba.css') }}">
+</head>
+<body>
+    
+
           </header>
           <!-- Left side column. contains the logo and sidebar -->
           <aside class="main-sidebar">
@@ -200,5 +201,7 @@
 <script src="{{ URL::asset('js/map.js') }}"></script>
 <!-- PRUEBA -->
 <script src="{{ URL::asset('js/prueba.js') }}"></script>
+@section('js')
+@show
 </body>
 </html>
