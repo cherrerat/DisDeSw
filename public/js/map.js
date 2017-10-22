@@ -1,5 +1,5 @@
 
-$(document).ready(function()
+$("#mostrarMapa").click(function()
 {
 	var url = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAZKeNzENjHX4nAcELCYKe5MTMZ9bjvi2M&callback=initMap";
 	$.getScript(url, function(){
@@ -25,6 +25,7 @@ $(document).ready(function()
 		handleLocationError(false, infoWindow, map.getCenter());
 	}
 	});
+	google.maps.event.trigger(map, 'resize');
 });
 function handleLocationError(browserHasGeolocation, infoWindow, pos)
 {

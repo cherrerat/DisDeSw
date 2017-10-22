@@ -198,5 +198,7 @@
 <script src="{{ URL::asset('js/adminlte/demo.js') }}"></script>
 <!-- MAP -->
 <script src="{{ URL::asset('js/map.js') }}"></script>
+<!-- PRUEBA -->
+<script src="{{ URL::asset('js/prueba.js') }}"></script>
 </body>
 </html>

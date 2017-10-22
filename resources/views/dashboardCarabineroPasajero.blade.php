@@ -4,7 +4,7 @@
 
 @section('headerRuta')
   <div class="col-md-11 row">
-    <h4 class="h4"><a href="">Carabineros de Chile</a> -> <a href="#">Busqueda bus</a></h4>
+    <h4 class="h4"><a href="">Carabineros de Chile</a> -> <a href="#">Busqueda pasajero</a></h4>
     <button type="button" class="btn" id="volverMap">Volver</button>
   </div>
 @endsection()
@@ -20,8 +20,8 @@
                     </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li  class="active"><a href="#"><i class="fa fa-circle-o"></i>Bus</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>Pasajero</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i>Bus</a></li>
+                    <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Pasajero</a></li>
                   </ul>
                 </li>
                 <li class="treeview">
@@ -72,7 +72,7 @@
   <div class="col-md-10" id="datosBusq">
     {!! Form::open(['url' => '']) !!}
       <div class="form-group col-md-8">
-        {!! Form::select('formatoBusqueda', ['patente'=>'Patente', 'nviaje'=> 'N° viaje'],'patente', ['class'=>'form-control', 'id'=>'opbus']) !!}
+        {!! Form::select('formatoBusqueda', ['rpasajero'=>'Run pasajero', 'npasajero'=> 'Nombre pasajero'],'rpasajero', ['class'=>'form-control', 'id'=>'oppasajero']) !!}
         {!! Form::text('datobusqueda', null, ['class' => 'form-control', 'id' => 'datobusqueda', 'placeholder' => 'Ingrese dato de busqueda']) !!}
         
         <button type="button" class="btn btn-danger" id="btnB">Buscar</button>
@@ -82,22 +82,26 @@
   <div class="col-md-10" id="infoCompletaChofer">
     <div class="box">
       <div class="box-header">
-        <h3 class="box-title">Datos tripulación viaje n°123</h3>
+        <h3 class="box-title">Datos pasajero viaje n°123</h3>
       </div> <!-- box header -->
       <div class="box-body">
         {!! Form::open(['url' => '', 'class' => 'form-horizontal']) !!}
         <div class="input-group text-center">
           <img src="{{ URL::asset('img/user2-160x160.jpg') }}" alt="" class="img-thumbnail" id="imgChofer"></br>
-          {!! Form::label('nombreChofer', 'Nombre Chofer: ')!!}
-          {!! Form::text('nombreChofer', null, ['id' => 'datosChofer', 'readonly'])!!}
-          {!! Form::label('runC', 'Run del chofer: ')!!}
-          {!! Form::text('runC', null, ['id' => 'datosChofer', 'readonly'])!!}</br>
-          {!! Form::label('hi', 'Hora inicio viaje: ')!!}
-          {!! Form::text('hi', null, ['id' => 'datosViaje', 'readonly'])!!}
-          {!! Form::label('hf', 'Hora final viaje: ')!!}
-          {!! Form::text('hf', null, ['id' => 'datosViaje', 'readonly'])!!}</br>
+          {!! Form::label('runP', 'RUN Pasajero: ')!!}
+          {!! Form::text('runP', null, ['id' => 'datosChofer', 'readonly'])!!}
+          {!! Form::label('nombreP', 'Nombre Pasajero: ')!!}
+          {!! Form::text('nombreP', null, ['id' => 'datosChofer', 'readonly'])!!}</br>
+          {!! Form::label('ot', 'Terminal de origen: ')!!}
+          {!! Form::text('ot', null, ['id' => 'datosViaje', 'readonly'])!!}
+          {!! Form::label('ft', 'Terminal de destino: ')!!}
+          {!! Form::text('ft', null, ['id' => 'datosViaje', 'readonly'])!!}</br>
+          {!! Form::label('hllegada', 'Hora de llegada: ')!!}
+          {!! Form::text('hllegada', null, ['id' => 'andenLlegada', 'readonly'])!!}
           {!! Form::label('allegada', 'Anden de llegada: ')!!}
           {!! Form::text('allegada', null, ['id' => 'andenLlegada', 'readonly'])!!}
+          {!! Form::label('profugo',null,['id' => 'andenLlegada']) !!}
+          {!! Form::checkbox('profugo','value', true, ['readonly', 'onclick' => 'return false;' ]) !!}</br>
           <button type="button" class="btn btn-danger" id="mostrarMapa">Mostrar posición real</button></br>
           <button type="button" class="btn" id="volverBusqueda">Volver</button>
         </div>

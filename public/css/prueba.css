@@ -17,3 +17,50 @@
     width: 50px;
     margin-left: 35%;
 }
+#imgChofer
+{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+}
+#datosChofer
+{
+    border: none;
+    background-color: #bbb;
+    border-radius: 5px;
+    padding: 0;
+    margin-left: 20px;
+    margin-right: 12px;
+}
+#datosViaje
+{
+    border: none;
+    background-color: #bbb;
+    border-radius: 5px;
+    padding: 0;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+#andenLlegada 
+{
+    border: none;
+    background-color: #bbb;
+    border-radius: 5px;
+    padding: 0;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 5em;
+}
+#volverBusqueda
+{
+    float: right;
+}
+#volverMap
+{
+    float: left;   
+    display: none;
+}
+#infoCompletaChofer 
+{
+    display: none;
+}
