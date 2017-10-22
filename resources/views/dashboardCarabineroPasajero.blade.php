@@ -102,11 +102,14 @@
           {!! Form::text('allegada', null, ['id' => 'andenLlegada', 'readonly'])!!}
           {!! Form::label('profugo',null,['id' => 'andenLlegada']) !!}
           {!! Form::checkbox('profugo','value', true, ['readonly', 'onclick' => 'return false;' ]) !!}</br>
-          <button type="button" class="btn btn-danger" id="mostrarMapa">Mostrar posición real</button></br>
-          <button type="button" class="btn" id="volverBusqueda">Volver</button>
+          <button type="button" class="btn btn-danger" id="mostrarMapa">Mostrar posición real</button></br> 
         </div>
         {!! Form::close() !!}
       </div><!-- the body -->
+      <div class="box-footer">
+        <button type="button" class="btn btn-primary" id="mostrarHistorial">Historial de viajes</button>
+        <button type="button" class="btn" id="volverBusqueda">Volver</button>
+      </div>
     </div>
   </div>
   
