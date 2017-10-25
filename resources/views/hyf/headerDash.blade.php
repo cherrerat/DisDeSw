@@ -80,7 +80,7 @@
                   <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                       <img src=" {{ URL::asset('img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
-                      <span class="hidden-xs">Usuario random</span>
+                      <span class="hidden-xs">@yield('nombreUsuario')</span>
                     </a>
                     <ul class="dropdown-menu">
                       <!-- User image -->
@@ -88,8 +88,7 @@
                       <img src=" {{ URL::asset('img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
         
                         <p>
-                          Ricardo Cesped - Chupapico
-                          <small>Chupador de pico profesional desde 1997</small>
+                          @yield('institucion')
                         </p>
                       </li>
                       <!-- Menu Body -->
