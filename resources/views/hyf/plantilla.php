@@ -77,6 +77,29 @@
 
 <!-- Body -->
 @section('cuerpa')
+    <!--Container-->
+    <div class="container col-md-11">
+        <!--Box-->
+        <div class="box">
+            <!--Box header-->
+            <div class="box-header">
+                
+            </div>
+            <!--/Box header-->
+            <!--Box body-->
+            <div class="box-body">
+
+            </div>
+            <!--/Box body-->
+            <!--Box footer-->
+            <div class="box-footer">
+            
+            </div>
+            <!--/Box footer-->
+        </div>
+        <!--/Box-->
+    </div>
+    <!--/Container-->
 @endsection()
 
 <!-- JS Adicional -->
