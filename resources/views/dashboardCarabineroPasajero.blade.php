@@ -66,7 +66,6 @@
 @endsection
   
 @section('cuerpa')
-
 <div class="cointainer col-md-11" id="contenedorMapa">
 
   <div class="col-md-10" id="datosBusq">

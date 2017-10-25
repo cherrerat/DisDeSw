@@ -111,13 +111,14 @@
                     </div>     
                 </div>   
                 <div class="divBusqueda">
-                    <button type="button" class="btn btnBS" id="btnBusqueda">Busqueda</button>
+                    <button type="button" class="btn btn-primary btnBS" id="btnBusqueda">Busqueda</button>
                 </div>
                 {!! Form::close() !!}
             </div>
             <!--/Box body-->
             <!-- Box footer -->
-            <div class="box-footer">
+            <div class="box-footer">    
+                <button class="btn" id="btnVolver">Volver</button>
             </div>
             <!-- /Box footer -->
         </div>

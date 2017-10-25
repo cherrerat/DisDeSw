@@ -17,7 +17,7 @@
 <!-- Ruta de navegación en body -->
 @section('headerRuta')
     <div class="col-md-11 row">
-        <h4 class="h4"><a href="">Carabineros de Chile</a> -> <a href="#">Itinerario de buses</a></h4>
+        <h4 class="h4"><a href="">Carabineros de Chile</a> -> <a href="#">Itinerario de buses</a> -> <a href="#">Detalle</a></h4>
     </div>
 @endsection()
 
