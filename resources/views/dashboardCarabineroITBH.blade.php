@@ -5,8 +5,9 @@
 @section('subtitulo', 'Itinerario buses')
 <!-- CSS extra -->
 @section('css')
-    <link rel="stylesheet" href="{{ URL::asset('css/itinerarioBuses.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.16/b-1.4.2/b-html5-1.4.2/datatables.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/itinerarioHBuses.css') }}">
+    
 @endsection()
 
 <!-- Usuario -->
@@ -79,47 +80,74 @@
 @section('cuerpa')
     <!-- Container -->
     <div class="container col-md-11">
-        <!-- Box principal -->
-        <div class="box" id="boxPrincipal">
+        <!-- Box DataTable -->
+        <div class="box">
             <!-- Box header -->
             <div class="box-header">
-                <h3 class="box-title">Itinerario de buses</h3>
-            </div><!-- /Box header -->
+                <h3 class="box-title">Historial de buses</h3>
+            </div>
+            <!-- /Box header-->
             <!-- Box body -->
             <div class="box-body">
-                {!! Form::open(['url' => '']) !!} 
-                <div class="input-group col-md-12" id="bodySuperior">
-                    <div class="form-group">
-                        {!! Form::label('empresaBus', 'Empresa', ['class' => 'labelInput control-label', 'id' => 'separador']) !!}
-                        <div class="selectCustom" id="separador">           
-                            {!! Form::select('empresaBus', ['E1' => 'Empresa 1', 'E2' => 'Empresa 2', 'E3' => 'Empresa 3'], 'E1', ['class' => 'inputSelect']) !!}
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        {!! Form::label('bus', 'Bus', ['class' => 'labelInput control-label', 'id' => 'separador']) !!}
-                        <div class="selectCustom" id="separador">
-                            {!! Form::select('bus', ['B1' => 'XX-XX-XX', 'B2' => 'XX-XX-XY', 'B3' => 'XX-XY-XX', 'B4' => 'XX-XY-XY', 'B5' => 'XX-XY-YX', 'B6' => 'XX-XY-YY', 'B7' => 'XX-YX-XX', 'B8' => 'XX-YX-XY', 'B9' => 'XX-YX-YX', 'B10' => 'XX-YX-YY'], 'B1', ['class' => 'inputSelect'])!!}
-                        </div>
-                    </div>
-                </div>
-                <div id="bodyInferior">
-                    {!! Form::label('dia', 'Día', ['class' => 'labelInput'])!!}
-                    <input type="date" name="dia" id="diaItinerario" class="dataPicker">
-                </div>
-                <div id="bodyButton">
-                    <button type="button" class="btn" id="busquedaItinerario">Busqueda</button>
-                </div>
-                
-                {!! Form::close() !!}
-            </div><!-- /Box body-->
+                <!-- Tabla -->
+                <table class="display" id="tablaHistorial" width="100%" cellspacing="0" data-order='[[ 1, "asc" ]]'>
+                    <!-- Header de tabla -->
+                    <thead>
+                        <tr>
+                            <th>Terminal inicio</th>
+                            <th>Hora inicio</th>
+                            <th>Terminal destino</th>
+                            <th>Hora destino</th>
+                        </tr>
+                    </thead>
+                    <!-- /Header de tabla-->
+                    <!-- Footer de tabla -->
+                    <tfoot>
+                        <tr>
+                            <th>Terminal inicio</th>
+                            <th>Hora inicio</th>
+                            <th>Terminal destino</th>
+                            <th>Hora destino</th>
+                        </tr>
+                    </tfoot>
+                    <!-- /Footer de tabla -->
+                    <!-- Body de tabla -->
+                    <tbody>
+                        <tr>
+                            <td>San Borja</td>
+                            <td>08:00:00</td>
+                            <td>Rancagua</td>
+                            <td>10:00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Rancagua</td>
+                            <td>10:00:00</td>
+                            <td>Talca</td>
+                            <td>13:00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Talca</td>
+                            <td>13:00:00</td>
+                            <td>Concepción</td>
+                            <td>16:00:00</td>
+                        </tr>
+                    </tbody>
+                    <!-- /Body de tabla -->
+                </table>
+                <!-- /Tabla -->
+            </div>
+            <!-- /Box body -->
             <!-- Box footer -->
             <div class="box-footer">
-                <button type="button" class="btn" id="btnVolver">Volver</button>
-            </div><!-- /Box footer-->
-        </div><!-- /Box principal -->
+                <button class="btn" id="btnVolver">Volver</button>
+            </div>
+            <!-- /Box footer -->
+        </div>
     </div><!-- /Container -->
 @endsection()
 
 <!-- JS Adicional -->
 @section('js')
+    <script src="{{ URL::asset('https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ URL::asset('js/itinerarioHBuses.js') }}"></script>
 @endsection()
