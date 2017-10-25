@@ -14,9 +14,9 @@ body
     width: 50%;
     padding: 10px;
 }
-#divVolver
+#btnVolver
 {
-    position: relative;
+    float:right;
 }
 .busquedaItinerario
 {

@@ -113,9 +113,7 @@
             </div><!-- /Box body-->
             <!-- Box footer -->
             <div class="box-footer">
-                <div class="divVolver">
-                    <button type="button" class="btn" id="btnVolver">Volver</button>
-                </div>
+                <button type="button" class="btn" id="btnVolver">Volver</button>
             </div><!-- /Box footer-->
         </div><!-- /Box principal -->
     </div><!-- /Container -->
