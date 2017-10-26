@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Google map</title>
+	<title>SCIT</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1.0">
 	<link rel="stylesheet" href=" {{ URL::asset('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" href=" {{ URL::asset('https://fonts.googleapis.com/css?family=Open+Sans') }} ">
-	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/map.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/style.css') }}">
  
 </head>
 <body>

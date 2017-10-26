@@ -12,5 +12,5 @@
 */
 
 Route::get('/', function () {
-    return view('dashboardCarabineroTripulacionH');
+    return view('index2');
 });

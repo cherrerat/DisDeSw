@@ -5,6 +5,10 @@
 	font-family: 'Open Sans', sans-serif;
 
 }
+body
+{
+	background-color: #aaa; 
+}
 #contenedorMapa 
 {
 	height: 38em;
