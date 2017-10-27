@@ -57,9 +57,6 @@
             <hr>
             {!! Form::submit('Buscar', ['class' => 'btn btn-success buscarBus', 'id' => 'buscarBus']) !!}
             {!! Form::close() !!}
-            <!--{!! Form::select('formatoBusqueda', ['nviaje' => 'N° de viaje', 'patente' => 'Patente'], 'nviaje', ['class' => 'custom-select', 'id' => 'select'])!!}
-            {!! Form::text('datobusqueda', null, ['class' => 'justify-content-center form-control', 'id' => 'datobusqueda', 'placeholder' => 'Ingrese los datos de busqueda'])!!}
-            {!! Form::submit('Enviar', ['class' => 'btn btn-success', 'id' => 'enviar'])!!}-->
 		</div>
 		
 		<div id="map"></div>

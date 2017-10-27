@@ -1,0 +1,16 @@
+.btn-group
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-crud
+{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+#btnVolver{
+    float: right;
+}
