@@ -1,0 +1,33 @@
+label
+{
+    display: inline-block;
+}
+.NContrato 
+{
+    display: flex;
+    vertical-align: middle;
+    margin-bottom: 20px;
+}
+.activo
+{
+    vertical-align: middle;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-left: 20%    ;
+}
+.checkBox 
+{
+    margin-left: 20%;
+}
+.inputLabel 
+{
+    margin-right:15px;
+}
+.bloq
+{
+    text-align: center;
+}
+#btnVolver 
+{
+    float: right;
+}

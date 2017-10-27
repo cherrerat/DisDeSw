@@ -1,0 +1,19 @@
+#contenedorMapa 
+{
+	height: 38em;
+	padding: 0;
+	margin: 0;
+    position: relative;
+}
+#map
+{
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+}
+#btnVolver 
+{
+    float: right;
+}

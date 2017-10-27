@@ -78,46 +78,43 @@
 <!-- Body -->
 @section('cuerpa')
     <!-- Container -->
-    <div class="container col-md-11">
-        <!-- Box principal -->
-        <div class="box" id="boxPrincipal">
-            <!-- Box header -->
-            <div class="box-header">
-                <h3 class="box-title">Itinerario de buses</h3>
-            </div><!-- /Box header -->
-            <!-- Box body -->
-            <div class="box-body">
-                {!! Form::open(['url' => '']) !!} 
-                <div class="input-group col-md-12" id="bodySuperior">
-                    <div class="form-group">
-                        {!! Form::label('empresaBus', 'Empresa', ['class' => 'labelInput control-label', 'id' => 'separador']) !!}
-                        <div class="selectCustom" id="separador">           
-                            {!! Form::select('empresaBus', ['E1' => 'Empresa 1', 'E2' => 'Empresa 2', 'E3' => 'Empresa 3'], 'E1', ['class' => 'inputSelect']) !!}
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        {!! Form::label('bus', 'Bus', ['class' => 'labelInput control-label', 'id' => 'separador']) !!}
-                        <div class="selectCustom" id="separador">
-                            {!! Form::select('bus', ['B1' => 'XX-XX-XX', 'B2' => 'XX-XX-XY', 'B3' => 'XX-XY-XX', 'B4' => 'XX-XY-XY', 'B5' => 'XX-XY-YX', 'B6' => 'XX-XY-YY', 'B7' => 'XX-YX-XX', 'B8' => 'XX-YX-XY', 'B9' => 'XX-YX-YX', 'B10' => 'XX-YX-YY'], 'B1', ['class' => 'inputSelect'])!!}
-                        </div>
-                    </div>
-                </div>
-                <div id="bodyInferior">
-                    {!! Form::label('dia', 'Día', ['class' => 'labelInput'])!!}
-                    <input type="date" name="dia" id="diaItinerario" class="dataPicker">
-                </div>
-                <div id="bodyButton">
-                    <button type="button" class="btn" id="busquedaItinerario">Busqueda</button>
-                </div>
-                
-                {!! Form::close() !!}
-            </div><!-- /Box body-->
-            <!-- Box footer -->
-            <div class="box-footer">
-                <button type="button" class="btn" id="btnVolver">Volver</button>
-            </div><!-- /Box footer-->
-        </div><!-- /Box principal -->
-    </div><!-- /Container -->
+    <div class="container col-md-6">
+    <!-- Box principal -->
+    <div class="box" id="boxPrincipal">
+        <!-- Box header -->
+        <div class="box-header">
+            <h3 class="box-title">Itinerario de buses</h3>
+        </div><!-- /Box header -->
+        <!-- Box body -->
+        <div class="box-body">
+        {!! Form::open(['url' => '', 'class' => 'form-horizontal']) !!}
+        <div class="col-md-11 form-group grupo">
+            {!! Form::label('empresaBus', 'Empresa', ['class' => 'form-control-label col-sm-1']) !!}
+            <div class="col-sm-3">
+                {!! Form::select('empresaBus', ['E1' => 'Empresa 1', 'E2' => 'Empresa 2', 'E3' => 'Empresa 3'], 'E1', ['class' => 'form-control input-sm']) !!}
+            </div>
+            {!! Form::label('bus', 'Bus', ['class' => 'form-control-label col-sm-1']) !!}
+            <div class="col-sm-3">
+                {!! Form::select('bus', ['B1' => 'XX-XX-XX', 'B2' => 'XX-XX-XY', 'B3' => 'XX-XY-XX', 'B4' => 'XX-XY-XY', 'B5' => 'XX-XY-YX', 'B6' => 'XX-XY-YY', 'B7' => 'XX-YX-XX', 'B8' => 'XX-YX-XY', 'B9' => 'XX-YX-YX', 'B10' => 'XX-YX-YY'], 'B1', ['class' => 'form-control input-sm'])!!}
+            </div>
+        </div>
+        <div class="form-group col-md-11 ">
+            {!! Form::label('dia', 'Día', ['class' => 'form-control-label col-sm-1'])!!}
+            <div class="col-sm-3">
+                <input type="date" name="dia" id="diaItinerario" class="dataPicker">
+            </div>
+        </div>
+        <div class="form-group col-md-11 btnBusqueda">
+            <button type="button" class="btn btn-success" id="busquedaItinerario">Busqueda</button>
+        </div>
+        {!! Form::close() !!}
+        </div><!-- /Box body-->
+        <!-- Box footer -->
+        <div class="box-footer">
+            <button type="button" class="btn" id="btnVolver">Volver</button>
+        </div><!-- /Box footer-->
+    </div><!-- /Box principal -->
+</div><!-- /Container -->
 @endsection()
 
 <!-- JS Adicional -->

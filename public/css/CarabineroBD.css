@@ -1,0 +1,15 @@
+#imgChofer
+{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+}
+
+label
+{
+    display: inline-block;
+}
+.grupo-de-input
+{
+    width: 100%;
+}
