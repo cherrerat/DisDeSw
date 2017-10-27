@@ -44,4 +44,13 @@
         </div>
     </div>
     <!--/Modal-->
+    <!--Main-->
+    <div class="main">
+    <!--MAP-->
+        <div class="container  containerMap align-middle">
+            <div id="Map"></div>
+        </div>
+    <!--/MAP-->
+    </div>
+    <!--/Main-->
 @endsection()

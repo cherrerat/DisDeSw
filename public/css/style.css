@@ -8,6 +8,7 @@
 body
 {
     background-color: #000;
+    height: 100%;
 }
 .nav-right
 {
@@ -31,4 +32,25 @@ body
 .inputText
 {
     width: 100%;
+}
+.main
+{
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+.containerMap
+{
+    position: relative;
+    height: 38em;
+    margin: 0 auto;
+    display: table-cell;
+}
+.map
+{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute; 
 }

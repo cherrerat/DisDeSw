@@ -1,9 +1,10 @@
 
-$("#mostrarMapa").click(function()
+$(document).ready(function()
 {
 	var url = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAZKeNzENjHX4nAcELCYKe5MTMZ9bjvi2M&callback=initMap";
+	var map;
 	$.getScript(url, function(){
-		var map = new google.maps.Map(document.getElementById('map'),{
+		map = new google.maps.Map(document.getElementById('map'),{
 		center:{lat:-34.397, lng:150.644},
 		zoom:15
 	});
