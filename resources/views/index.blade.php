@@ -6,7 +6,7 @@
     <!-- Navbar -->
     <div class="container navbar">
         <nav class="navbar navbar-light bg-faded background-nav">
-            <a href="#" class="nav-right navbar-brand" data-toggle="modal" data-target=".bd-example-modal-sm" id="signin">Iniciar sesión</a>
+            <a href="#" class="nav-right navbar-brand nav-link" data-toggle="modal" data-target=".bd-example-modal-sm" id="signin">Iniciar sesión</a>
         </nav>
     </div>
     <!--/Navbar-->
