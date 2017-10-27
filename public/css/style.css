@@ -7,12 +7,22 @@
 }
 body
 {
-    background-color: #000;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e1ffff+0,e1ffff+7,e1ffff+12,fdffff+12,e6f8fd+30,c8eefb+54,bee4f8+75,b1d8f5+100;Blue+Pipe+%232 */
+    background: rgb(225,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(225,255,255,1) 0%, rgba(225,255,255,1) 7%, rgba(225,255,255,1) 12%, rgba(253,255,255,1) 12%, rgba(230,248,253,1) 30%, rgba(200,238,251,1) 54%, rgba(190,228,248,1) 75%, rgba(177,216,245,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(225,255,255,1) 0%,rgba(225,255,255,1) 7%,rgba(225,255,255,1) 12%,rgba(253,255,255,1) 12%,rgba(230,248,253,1) 30%,rgba(200,238,251,1) 54%,rgba(190,228,248,1) 75%,rgba(177,216,245,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(225,255,255,1) 0%,rgba(225,255,255,1) 7%,rgba(225,255,255,1) 12%,rgba(253,255,255,1) 12%,rgba(230,248,253,1) 30%,rgba(200,238,251,1) 54%,rgba(190,228,248,1) 75%,rgba(177,216,245,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1ffff', endColorstr='#b1d8f5',GradientType=0 ); /* IE6-9 */
+    /*background-color: #000;*/
     height: 100%;
 }
 .nav-right
 {
     float: right;
+}
+.background-nav
+{
+    background-color: transparent;
 }
 .label-title
 {
@@ -31,26 +41,50 @@ body
 }
 .inputText
 {
-    width: 100%;
+    width: 15em;
+}
+.inputBus
+{
+    width: 30em;
+    line-height: 2.1;
 }
 .main
 {
-    height: 100%;
-    width: 100%;
-    display: table;
-}
-.containerMap
-{
-    position: relative;
-    height: 38em;
+    max-width: 1280px;
+    max-height: 900px;
     margin: 0 auto;
-    display: table-cell;
+	position: relative;
+	z-index: 0;
+    overflow: hidden;
 }
-.map
+.contenedorbusqueda
 {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    position: absolute; 
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+	width: 50%;
+	height: 30%;
+	background-color: #E0E5DD;
+	position: absolute;
+    z-index: 1;
+    text-align: center;
+}
+.titulo-centrado
+{
+    margin-top: 15px;
+}
+.select-box
+{
+    float: left;
+    margin-left: 5px;
+}
+#map
+{
+	height: 900px;
+	margin-right: auto;
+	text-align: center;
+	position: relative;
+	z-index: 0;
 }

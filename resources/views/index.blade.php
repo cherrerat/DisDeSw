@@ -1,56 +1,68 @@
-@extends('hyf/header1')
-
-    @section('body')
-	<div id="fondo" class="justify-content-center">
-		<div id="navbar" class="justify-content-end">
-			<ul class="nav justify-content-end">
-				<li class="nav-item">
-					<button type="button" class="btnSession nav-link" data-toggle="modal" data-target="#small"  onclick="mostrarForm()">Iniciar Sesión</button>
-						<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="small">
-						  <div class="modal-dialog modal-sm">
-						    <div class="modal-content">
-                                 {!! Form::open(['url' => '', 'class' => 'form-control'])!!}
-						     		<br>
-						     		<span class="text-center text-muted textoFeo">Inicio de sesión</span>
-								  <div class="form-group row divText">
-								    <div class="col-sm-10">
-                                   {!! Form::text('email', null, ['class' => 'form-control', 'id' => 'staticEmail', 'placeholder' => 'Email']) !!}
-								    </div>
-								  </div>
-								  <div class="form-group row">
-								    <div class="col-sm-10">
-                                        {!! Form::password('password', ['class' => 'form-control', 'id' => 'inputPassword', 'placeholder' => 'Contraseña'])!!}
-								    </div>
-								  </div>
-								  <div class="form-group row">
-								  	<div class="col-sm-6 col-form-label">
-                                        {!! Form::submit('Enviar', ['class'=>'form-control btn btn-primary btnSubmit'], ['id' => 'btnEnviar']) !!}
-								  	</div>
-								  </div>
-								  <br>
-                                  {!! Form::close() !!}
-						    </div>
-						  </div>
-						</div>
-				</li>
-			</ul>
-
-		</div>
-		
-	
-		
+@extends('hyf.header1')
 
 
+@section('body')
 
-	</div>
-	<div id="cajamayor" class="align-middle">
-		<div id="contenedorbusqueda" class="card rounded align-middle">
-            <span id="busquedaprincipal">Busqueda de bus</span>
-            {!! Form::select('formatoBusqueda', ['nviaje' => 'N° de viaje', 'patente' => 'Patente'], 'nviaje', ['class' => 'custom-select', 'id' => 'select'])!!}
+    <!-- Navbar -->
+    <div class="container navbar">
+        <nav class="navbar navbar-light bg-faded background-nav">
+            <a href="#" class="nav-right navbar-brand" data-toggle="modal" data-target=".bd-example-modal-sm" id="signin">Iniciar sesión</a>
+        </nav>
+    </div>
+    <!--/Navbar-->
+    <!--Modal-->
+    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="model-header">
+                    <div class="label-title">
+                        <h5 class="modal-title text-center">Inicio de sesión</h5>
+                    </div>
+                </div>
+                <div class="modal-body">
+                <hr>
+                {!! Form::open(['url' => '']) !!}
+                    <div class="form-group">
+                        <div class="label-input">
+                            {!! Form::label('username', 'Username', ['class' => 'form-control-label']) !!}
+                        </div>
+                        {!! Form::text('username', null, ['class' => 'form-control inputText', 'id' => 'inputUsername', 'placeholder' => 'Ingrese el username']) !!}
+                    </div>
+                    <div class="form-group">
+                        <div class="label-input">
+                            {!! Form::label('password', 'Contraseña', ['class' => 'form-control-label']) !!}
+                        </div>
+                        {!! Form::password('password', ['class' => 'form-control inputText', 'id' => 'inputPassword', 'placeholder' => 'Ingrese su contraseña']) !!}
+                    </div>
+                    <hr>
+                    <div class="label-input">
+                        {!! Form::submit('Ingresar', ['class' => 'btn btn-primary', 'id' => 'btnIngresar']) !!}
+                    </div>
+                {!! Form::close() !!}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/Modal-->
+    <!-- Main -->
+    <div class="main align-middle">
+		<div class="card rounded align-middle contenedorbusqueda">
+            <h2 class="title titulo-centrado">Busqueda de bus</h2>
+            <hr>
+            {!! Form::open(['url' => '', 'class' => 'form-horizontal'])!!}
+            <div class="form-group">
+                {!! Form::select('formatoBusqueda', ['nviaje' => 'N° de viaje', 'patente' => 'Patente'], 'nviaje', ['class' => 'custom-select select-box', 'id' => 'select'])!!}
+                {!! Form::text('datobusqueda', null, ['class' => 'form-control inputBus', 'id' => 'datobusqueda', 'placeholder' => 'Ingrese los datos de busqueda'])!!}
+            </div>
+            <hr>
+            {!! Form::submit('Buscar', ['class' => 'btn btn-success buscarBus', 'id' => 'buscarBus']) !!}
+            {!! Form::close() !!}
+            <!--{!! Form::select('formatoBusqueda', ['nviaje' => 'N° de viaje', 'patente' => 'Patente'], 'nviaje', ['class' => 'custom-select', 'id' => 'select'])!!}
             {!! Form::text('datobusqueda', null, ['class' => 'justify-content-center form-control', 'id' => 'datobusqueda', 'placeholder' => 'Ingrese los datos de busqueda'])!!}
-            {!! Form::submit('Enviar', ['class' => 'btn btn-success', 'id' => 'enviar'])!!}
+            {!! Form::submit('Enviar', ['class' => 'btn btn-success', 'id' => 'enviar'])!!}-->
 		</div>
 		
 		<div id="map"></div>
 	</div>
+    <!--/Main-->
 @endsection()
