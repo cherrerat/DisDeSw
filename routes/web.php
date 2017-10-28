@@ -12,5 +12,5 @@
 */
 
 Route::get('/', function () {
-    return view('EBC');
+    return view('ADTC');
 });
