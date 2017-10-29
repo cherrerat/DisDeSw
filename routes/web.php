@@ -12,12 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('CSTREV');
+    return view('index');
 });
 
 //Route::get('index/{id}', 'c_index@view');
 
-Route::post('index', [
+Route::post('/', [
     'uses' => 'c_index@store',
     'as' => 'indexTest'
     ]);

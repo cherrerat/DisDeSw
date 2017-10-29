@@ -60,7 +60,7 @@
 		</div>
 		
 		<div id="map"></div>
-        //preguntar al criss, ¿Como añado y uso funciones de un JS?
+
 	</div>
     <!--/Main-->
 @endsection()
