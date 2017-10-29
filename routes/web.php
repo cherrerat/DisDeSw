@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('CST');
 });
 
 //Route::get('index/{id}', 'c_index@view');
