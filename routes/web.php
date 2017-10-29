@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('ADTC');
+    return view('index');
 });
+
+//Route::get('index/{id}', 'c_index@view');
+
+Route::post('index', [
+    'uses' => 'c_index@store',
+    'as' => 'indexTest'
+    ]);
+

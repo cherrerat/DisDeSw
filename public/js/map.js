@@ -5,9 +5,14 @@ $(document).ready(function()
 	var map;
 	$.getScript(url, function(){
 		map = new google.maps.Map(document.getElementById('map'),{
-		center:{lat:-34.397, lng:150.644},
+		center:{lat:-33.586, lng:-70.714},
 		zoom:15
 	});
+	/*var uluru1 = {lat: -33.586, lng: -70.714};
+	var marker = new google.maps.Marker({
+		position: uluru1,
+		map: map
+	});*/
 	var infoWindow = new google.maps.InfoWindow({map: map});
 	if(navigator.geolocation)
 	{
@@ -32,4 +37,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos)
 {
 	infoWindow.setPosition(pos);
 	infoWindow.setContent(browserHasGeolocation?'Error: The geolocation service failed.': 'Error: Your browser doesnt support geolocation');
+}
+function addMarker(ubicacion){
+	//
 }
