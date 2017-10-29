@@ -32,17 +32,7 @@ $(document).ready(function()
 	}
 	});
 	google.maps.event.trigger(map, 'resize');
-	$.ajax({
-		type: "post",
-		url: window.location.href
-	}).done(function(entry){
-		//addFocusedMarker is a function to add a Marker and change the map view to center it
-		$posicion = google.map.LatLong(entry.ubicacion);
-		$maperizer.maperizer('addFocusedMarker', {
-			position: posicion,
-			map: map
-		});
-	});
+	
 	
 });
 function handleLocationError(browserHasGeolocation, infoWindow, pos)
@@ -51,5 +41,15 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos)
 	infoWindow.setContent(browserHasGeolocation?'Error: The geolocation service failed.': 'Error: Your browser doesnt support geolocation');
 }
 function addMarker(){
-	//
+	$.ajax({
+		type: "post",
+		url: './index'
+	}).done(function(entry){
+		//addFocusedMarker is a function to add a Marker and change the map view to center it
+		$posicion = google.map.LatLong(entry.ubicacion);
+		$maperizer.maperizer('addFocusedMarker', {
+			position: posicion,
+			map: map
+		});
+	});
 }
