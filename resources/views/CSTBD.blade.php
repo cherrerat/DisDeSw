@@ -2,9 +2,10 @@
 
 <!-- Titulo del navegador -->
 @section('titulo','CONASET')
-@section('subtitulo', 'Buscar bus')
+@section('subtitulo', 'Buscar bus | Detalles')
 <!-- CSS extra -->
 @section('css')
+    <link rel="stylesheet" href="{{ URL::asset('css/CarabineroBD.css') }}">
 @endsection()
 
 <!-- Usuario -->
@@ -14,7 +15,7 @@
 <!-- Ruta de navegación en body -->
 @section('headerRuta')
     <div class="col-md-11 row">
-        <h4 class="h4"><a href="">CONASET</a> -> <a href="#">Busqueda bus</a></h4>
+        <h4 class="h4"><a href="">CONASET</a> -> <a href="#">Busqueda bus</a> -> <a href="#">Detalles</a> </h4>
     </div>
 @endsection()
 
@@ -29,7 +30,7 @@
             </span>
             </a>
             <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i>Bus</a></li>
+            <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Bus</a></li>
             </ul>
         </li>
         <li class="treeview">
@@ -68,17 +69,50 @@
         <div class="box">
             <!--Box header-->
             <div class="box-header">
-                
+                <h3 class="box-title">Datos tripulación viaje n°123</h3>
             </div>
             <!--/Box header-->
             <!--Box body-->
             <div class="box-body">
-
+            {!! Form::open(['url' => '', 'class' => 'form-horizontal']) !!}
+            <div class="col-md-11 thumb-chofer">
+            <img src="{{ URL::asset('img/user2-160x160.jpg') }}" alt="" class="img-thumbnail" id="imgChofer">
+            </div>
+            <div class="form-group col-md-11 grupo-de-input">
+                {!! Form::label('nombreChofer', 'Nombre Chofer', ['class' => 'form-control-label col-sm-2'])!!}
+                <div class="col-sm-2">
+                    {!! Form::text('nombreChofer', null, ['class' => 'form-control input-sm', 'id' => 'nameChofer', 'readonly'])!!}
+                </div>
+                {!! Form::label('runC', 'Run del chofer', ['class' => 'form-control-label col-sm-2'])!!}
+                <div class="col-sm-2">
+                    {!! Form::text('runC', null, ['class' => 'form-control input-sm', 'id' => 'runChofer', 'readonly'])!!}
+                </div>
+            </div>
+            <div class="form-group col-md-11 grupo-de-input">
+                {!! Form::label('hi', 'Hora inicio viaje', ['class' => 'form-control-label col-sm-2'] ) !!}
+                <div class="col-sm-2">
+                    {!! Form::text('hi', null, ['class' => 'input-sm form-control', 'id' => 'horarioInicio', 'readonly'])!!}
+                </div>
+                {!! Form::label('hf', 'Hora final viaje', ['class' => 'form-control-label col-sm-2'])!!}
+                <div class="col-sm-2">
+                    {!! Form::text('hf', null, ['class' => 'datosViaje form-control', 'id' => 'horarioFinal', 'readonly'])!!}
+                </div>
+            </div>
+            <div class="form-group col-md-11 grupo-de-input">
+                {!! Form::label('allegada', 'Anden de llegada', ['class' => 'form-control-label col-sm-2'])!!}
+                <div class="col-sm-2">
+                    {!! Form::text('allegada', null, ['class' => 'andenLlegada form-control', 'id' => 'andenDestino', 'readonly'])!!}
+                </div>
+                <div class="col-sm-2">
+                    <button type="button" class="btn btn-danger" id="mostrarMapa">Mostrar posición real</button>
+                </div>
+            </div>
+            {!! Form::close() !!}
             </div>
             <!--/Box body-->
             <!--Box footer-->
             <div class="box-footer">
-            
+                <button type="button" class="btn" id="btnVolver">Volver</button>
             </div>
             <!--/Box footer-->
         </div>

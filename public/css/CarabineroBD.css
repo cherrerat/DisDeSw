@@ -1,7 +1,12 @@
+.thumb-chofer 
+{
+    text-align: center;
+}
 #imgChofer
 {
     width: 100px;
     height: 100px;
+    margin: 0 auto;
     margin-bottom: 15px;
 }
 
@@ -12,4 +17,7 @@ label
 .grupo-de-input
 {
     width: 100%;
+}
+#btnVolver{
+    float: right;
 }

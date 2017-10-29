@@ -5,6 +5,7 @@
 @section('subtitulo', 'Buscar bus')
 <!-- CSS extra -->
 @section('css')
+    <link rel="stylesheet" href="{{ URL::asset('css/Carabinero.css') }}">
 @endsection()
 
 <!-- Usuario -->
@@ -29,7 +30,7 @@
             </span>
             </a>
             <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i>Bus</a></li>
+            <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Bus</a></li>
             </ul>
         </li>
         <li class="treeview">
@@ -68,12 +69,24 @@
         <div class="box">
             <!--Box header-->
             <div class="box-header">
-                
+                <h5 class="box-title">Busqueda de bus</h5>
             </div>
             <!--/Box header-->
             <!--Box body-->
             <div class="box-body">
-
+            {!! Form::open(['url' => '', 'class' => 'form-horizontal']) !!}
+                <div class="form-group">
+                    <div class="col-sm-2">
+                        {!! Form::select('formatoBusqueda', ['patente'=>'Patente', 'nviaje'=> 'N° viaje'],'patente', ['class'=>'form-control input-sm', 'id'=>'opbus']) !!}
+                    </div>
+                    <div class="col-sm-8">
+                        {!! Form::text('datobusqueda', null, ['class' => 'form-control input-sm', 'id' => 'datobusqueda', 'placeholder' => 'Ingrese dato de busqueda']) !!}
+                    </div>
+                </div>
+                <div class="form-group btnBusqueda">
+                    <button type="button" class="btn btn-danger" id="btnB">Buscar</button>
+                </div>
+            {!! Form::close() !!}
             </div>
             <!--/Box body-->
             <!--Box footer-->

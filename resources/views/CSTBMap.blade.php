@@ -2,9 +2,10 @@
 
 <!-- Titulo del navegador -->
 @section('titulo','CONASET')
-@section('subtitulo', 'Buscar bus')
+@section('subtitulo', 'Buscar bus | Detalles | Mapa')
 <!-- CSS extra -->
 @section('css')
+    <link rel="stylesheet" href="{{ URL::asset('css/CarabineroBMap.css') }}">
 @endsection()
 
 <!-- Usuario -->
@@ -14,7 +15,7 @@
 <!-- Ruta de navegación en body -->
 @section('headerRuta')
     <div class="col-md-11 row">
-        <h4 class="h4"><a href="">CONASET</a> -> <a href="#">Busqueda bus</a></h4>
+        <h4 class="h4"><a href="">CONASET</a> -> <a href="#">Busqueda bus</a> -> <a href="#">Mapa</a></h4>
     </div>
 @endsection()
 
@@ -29,7 +30,7 @@
             </span>
             </a>
             <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i>Bus</a></li>
+            <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Bus</a></li>
             </ul>
         </li>
         <li class="treeview">
@@ -68,17 +69,19 @@
         <div class="box">
             <!--Box header-->
             <div class="box-header">
-                
+                <h5 class="box-title">Ubicación en tiempo real</h5>
             </div>
             <!--/Box header-->
             <!--Box body-->
             <div class="box-body">
-
+                <div class="cointainer col-md-11" id="contenedorMapa">
+                    <div id="map"></div>
+                </div>
             </div>
             <!--/Box body-->
             <!--Box footer-->
             <div class="box-footer">
-            
+                <button class="btn" id="btnVolver">Volver</button>
             </div>
             <!--/Box footer-->
         </div>

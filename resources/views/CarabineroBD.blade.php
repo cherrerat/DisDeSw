@@ -82,8 +82,8 @@
       </div> <!-- box header -->
       <div class="box-body">
       {!! Form::open(['url' => '', 'class' => 'form-horizontal']) !!}
-      <div class="col-md-11">
-      <img src="{{ URL::asset('img/user2-160x160.jpg') }}" alt="" class="img-thumbnail" id="imgChofer">
+      <div class="col-md-11 thumb-chofer">
+        <img src="{{ URL::asset('img/user2-160x160.jpg') }}" alt="" class="img-thumbnail" id="imgChofer">
       </div>
       <div class="form-group col-md-11 grupo-de-input">
           {!! Form::label('nombreChofer', 'Nombre Chofer', ['class' => 'form-control-label col-sm-2'])!!}
@@ -117,7 +117,7 @@
       {!! Form::close() !!}
     </div><!-- the body -->
     <div class="box-footer">
-          <button type="button" class="btn" id="volverBusqueda">Volver</button>
+          <button type="button" class="btn" id="btnVolver">Volver</button>
     </div>
     </div>
   </div>

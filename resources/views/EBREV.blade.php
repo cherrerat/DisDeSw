@@ -174,6 +174,6 @@
 
 <!-- JS Adicional -->
 @section('js')
-    <<script src="{{ URL::asset('https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ URL::asset('https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ URL::asset('js/EBREV.js') }}"></script>
 @endsection()
