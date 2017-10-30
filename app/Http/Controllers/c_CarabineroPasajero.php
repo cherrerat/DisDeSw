@@ -3,11 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use JavaScript;
 
 class c_CarabineroPasajero extends Controller
 {
     public function view(){
-        return view('CarabineroPasajero', ['hidden'=>"hidden", 'placeholder'=>'Ingrese dato de busqueda']);
+        return view('CarabineroPasajero', [
+            'hidden'=>"hidden",
+            'placeholder'=>'Ingrese dato de busqueda',
+            'rut'=>null,
+            'nombre'=>null,
+            'origen'=>null,
+            'destino'=>null,
+            'hora'=>null,
+            'anden'=>null]);
     }
     public function añadirPasajerosTest(){
         $pasajero = ['id'=>1,'rut'=>'11.111.111-1','nombre'=>'Fernando','apellido'=>'Karadima','edad'=>'67','antecedentes'=>'Pedofilia'];
@@ -20,11 +30,34 @@ class c_CarabineroPasajero extends Controller
         \App\pasajero::create($pasajero);
         return view('CarabineroPasajero', ['hidden'=>"hidden", 'placeholder'=>'Se añadieron los pibes']);
     }
-    public function buscarPasajero(Response $response){
-
+    public function buscarPasajero(Request $request){
         if($request->formatoBusqueda == 'rpasajero'){
-            $pasajero = DB::table('pasajero')->where('rut',$request->datobusqueda);
+            $pasajero = DB::table('pasajero')->where('rut',$request->datobusqueda)->first();
+            if($pasajero->antecedentes == ""){
+                return view('CarabineroPasajero',[
+                    'hidden'=>"",
+                    'placeholder'=>$pasajero->rut,
+                    'rut'=>$pasajero->rut,
+                    'nombre'=>"".$pasajero->Nombre.$pasajero->Apellido,
+                    'origen'=>null,
+                    'destino'=>null,
+                    'hora'=>null,
+                    'anden'=>null,
+                    'profugo'=>false
+                    ]);
+            }else{
+                return view('CarabineroPasajero',[
+                    'hidden'=>"",
+                    'placeholder'=>$pasajero->rut,
+                    'rut'=>$pasajero->rut,
+                    'nombre'=>"".$pasajero->Nombre.$pasajero->Apellido,
+                    'origen'=>null,
+                    'destino'=>null,
+                    'hora'=>null,
+                    'anden'=>null,
+                    'profugo'=>true
+                    ]);
+            }
         }
-
     }
 }

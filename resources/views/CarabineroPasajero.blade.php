@@ -69,12 +69,11 @@
 <div class="cointainer col-md-11" id="contenedorMapa">
 
   <div class="col-md-10" id="datosBusq">
-    {!! Form::open(['url' => '']) !!}
+    {!! Form::open(['url' => 'carabineros/buscarPasajero']) !!}
       <div class="form-group col-md-8">
         {!! Form::select('formatoBusqueda', ['rpasajero'=>'Run pasajero', 'npasajero'=> 'Nombre pasajero'],'rpasajero', ['class'=>'form-control', 'id'=>'oppasajero']) !!}
         {!! Form::text('datobusqueda', null, ['class' => 'form-control', 'id' => 'datobusqueda', 'placeholder' => $placeholder]) !!}
-        
-        <button type="button" class="btn btn-danger" id="btnB">Buscar</button>
+        {!! Form::submit('Buscar', ['class' => 'btn btn-primary', 'id' => 'btnB']) !!}
       </div>
     {!! Form::close() !!}
   </div>
@@ -84,23 +83,23 @@
         <h3 class="box-title">Datos pasajero viaje n°123</h3>
       </div> <!-- box header -->
       <div class="box-body">
-        {!! Form::open(['url' => 'buscarPasajero', 'class' => 'form-horizontal']) !!}
+        {!! Form::open(['url' => '', 'class' => 'form-horizontal']) !!}
         <div class="input-group text-center">
           <img src="{{ URL::asset('img/user2-160x160.jpg') }}" alt="" class="img-thumbnail" id="imgChofer"></br>
           {!! Form::label('runP', 'RUN Pasajero: ')!!}
-          {!! Form::text('runP', null, ['id' => 'datosChofer', 'readonly'])!!}
+          {!! Form::text('runP', $rut, ['id' => 'datosChofer', 'readonly'])!!}
           {!! Form::label('nombreP', 'Nombre Pasajero: ')!!}
-          {!! Form::text('nombreP', null, ['id' => 'datosChofer', 'readonly'])!!}</br>
+          {!! Form::text('nombreP', $nombre, ['id' => 'datosChofer', 'readonly'])!!}</br>
           {!! Form::label('ot', 'Terminal de origen: ')!!}
-          {!! Form::text('ot', null, ['id' => 'datosViaje', 'readonly'])!!}
+          {!! Form::text('ot', $origen, ['id' => 'datosViaje', 'readonly'])!!}
           {!! Form::label('ft', 'Terminal de destino: ')!!}
-          {!! Form::text('ft', null, ['id' => 'datosViaje', 'readonly'])!!}</br>
+          {!! Form::text('ft', $destino, ['id' => 'datosViaje', 'readonly'])!!}</br>
           {!! Form::label('hllegada', 'Hora de llegada: ')!!}
-          {!! Form::text('hllegada', null, ['id' => 'andenLlegada', 'readonly'])!!}
+          {!! Form::text('hllegada', $hora, ['id' => 'andenLlegada', 'readonly'])!!}
           {!! Form::label('allegada', 'Anden de llegada: ')!!}
-          {!! Form::text('allegada', null, ['id' => 'andenLlegada', 'readonly'])!!}
+          {!! Form::text('allegada', $anden, ['id' => 'andenLlegada', 'readonly'])!!}
           {!! Form::label('profugo',null,['id' => 'andenLlegada']) !!}
-          {!! Form::checkbox('profugo','value', true, ['readonly', 'onclick' => 'return false;' ]) !!}</br>
+          {!! Form::checkbox('profugo','value', $profugo, ['readonly', 'onclick' => 'return false;' ]) !!}</br>
           <button type="button" class="btn btn-danger" id="mostrarMapa">Mostrar posición real</button></br> 
         </div>
         {!! Form::close() !!}
