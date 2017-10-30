@@ -6,13 +6,12 @@ use Illuminate\Http\Request;
 use App\bus;
 use Illuminate\Support\Facades\DB;
 use JavaScript;
+use Illuminate\Routing\UrlGenerator;
 
 class c_index extends Controller
 {
-    public function view($patente){
-        $bus = DB::table('bus')->where('patente','BC-CL-34')->value('ubicacion');
-        //$bus = DB::table('bus')->where('patente',$patente)->value('ubicacion'); // USAR ESTE METODO DESPUES, CUANDO SE HAGA GET DEL FORM
-        return view('index', ['ubicacion' => $bus]);
+    public function view(){
+        return view('index');
     }
 
     public function store(Request $request){
@@ -35,9 +34,10 @@ class c_index extends Controller
     public function testing(Request $request){
         if($request->formatoBusqueda == 'patente'){
             $bus = DB::table('bus')->where('patente',$request->datobusqueda)->value('ubicacion');
-            $json = json_encode($bus);
+            //$json = json_encode($bus);
             if($bus != null){
-                return JavaScript::put(['bus' => $bus]);
+                return response($bus);
+                //return JavaScript::put(['bus' => $bus]);
             }else{
                 dd('No se encontro patente ingresada.'); //Cambiar por pantalla de error
             }

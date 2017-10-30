@@ -17,7 +17,13 @@ Route::get('/', function () {
 
 //Route::get('index/{id}', 'c_index@view');
 
-Route::post('/index', [
-    'uses' => 'c_index@testing',
-    'as' => 'indexTest'
+Route::group(['prefix'=>'/index'],function(){
+
+    Route::get('map',[
+        'uses'=>'c_index@view',
+        'as'=>'map'
     ]);
+
+});
+
+Route::get('map/data', 'c_index@testing')->name('mapData');

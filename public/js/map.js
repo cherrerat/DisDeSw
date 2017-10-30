@@ -5,7 +5,8 @@ $(document).ready(function()
 	var map;
 	$.getScript(url, function(){
 		map = new google.maps.Map(document.getElementById('map'),{
-		center:{lat:-33.586, lng:-70.714},
+		//center:{lat:-33.586, lng:-70.714},
+		center:coord,
 		zoom:15
 	});
 	var infoWindow = new google.maps.InfoWindow({map: map});
@@ -61,7 +62,7 @@ function addMarker(lat){
 	$.getScript(url, function(){
 		$.ajax({
 			type: "post",
-			url: './index'
+			url: 'index/data'
 		}).done(function(entry){
 			//addFocusedMarker is a function to add a Marker and change the map view to center it
 			$posicion = google.map.LatLong(entry.ubicacion);
@@ -73,8 +74,8 @@ function addMarker(lat){
 	});
 }
 
-$("#buscarBus").click(function(){
+/*$("#buscarBus").click(function(){
 	alert(coord);
 	//addMap(coord);
 	addMarker(coord);
-});
+});*/
