@@ -18,11 +18,6 @@ Route::get('/', function () {
 //Route::get('index/{id}', 'c_index@view');
 
 Route::post('/index', [
-    'uses' => 'c_index@store',
+    'uses' => 'c_index@testing',
     'as' => 'indexTest'
     ]);
-
-Route::post('/', [
-    'uses' => 'c_index@testing',
-    'as' => 'welcomeTest'
-]); 

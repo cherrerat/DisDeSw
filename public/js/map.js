@@ -56,9 +56,9 @@ function addMap(lat) {
 	});
 	google.maps.event.trigger(map, 'resize');
 }
-/*function addMarker(){
+function addMarker(lat){
 	var url = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAZKeNzENjHX4nAcELCYKe5MTMZ9bjvi2M&callback=initMap";
-	$.getScript(url, function/(){
+	$.getScript(url, function(){
 		$.ajax({
 			type: "post",
 			url: './index'
@@ -66,15 +66,15 @@ function addMap(lat) {
 			//addFocusedMarker is a function to add a Marker and change the map view to center it
 			$posicion = google.map.LatLong(entry.ubicacion);
 			$maperizer.maperizer('addFocusedMarker', {
-				position: posicion,
+				position: lat,
 				map: map
 			});
 		});
 	});
-}*/
+}
 
-$("#btnLoco").click(function(){
+$("#buscarBus").click(function(){
 	alert(coord);
-	addMap(coord);
-	addMarker();
+	//addMap(coord);
+	addMarker(coord);
 });

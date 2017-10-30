@@ -49,7 +49,7 @@
 		<div class="card rounded align-middle contenedorbusqueda">
             <h2 class="title titulo-centrado">Busqueda de bus</h2>
             <hr>
-            {!! Form::open(['route' => 'welcomeTest','class' => 'form-horizontal'])!!}
+            {!! Form::open(['route' => 'indexTest','class' => 'form-horizontal'])!!}
             <div class="form-group">
                 {!! Form::select('formatoBusqueda', ['nviaje' => 'N° de viaje', 'patente' => 'Patente'], 'patente', ['class' => 'custom-select select-box', 'id' => 'select'])!!}
                 {!! Form::text('datobusqueda', null, ['class' => 'form-control inputBus', 'id' => 'datobusqueda', 'placeholder' => 'Ingrese los datos de busqueda'])!!}
@@ -58,8 +58,17 @@
             {!! Form::submit('Buscar', ['class' => 'btn btn-success buscarBus', 'id' => 'buscarBus']) !!}
             {!! Form::close() !!}
 		</div>
-		
+
 		<div id="map"></div>
+
+		<script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+                <script>
+                    var coord = window.bus;
+                </script>
+        <script src="js/map.js"></script>
 
 	</div>
     <!--/Main-->

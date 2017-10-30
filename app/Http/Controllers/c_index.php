@@ -37,10 +37,7 @@ class c_index extends Controller
             $bus = DB::table('bus')->where('patente',$request->datobusqueda)->value('ubicacion');
             $json = json_encode($bus);
             if($bus != null){
-                JavaScript::put([
-                    'bus' => $bus
-                ]);
-                return view('welcome');
+                return JavaScript::put(['bus' => $bus]);
             }else{
                 dd('No se encontro patente ingresada.'); //Cambiar por pantalla de error
             }
