@@ -4,25 +4,6 @@ var latlgn;
 $(document).ready(function(){
     iniciar();
 });
-/*function iniciar(){
-    var infoWindow = new google.maps.InfoWindow({map: mapa});
-    crearMapa({lat: -34.397, lng: 150.644});
-    if(navigator.geolocation){
-       navigator.geolocation.getCurrentPosition(function(position) {
-           var pos = {
-               lat: position.coords.latitude,
-               lng: position.coords.longitude
-           };
-           infoWindow.setPosition(pos);
-           infoWindow.setContent('Location found.');
-           mapa.setCenter(pos);
-       } ,function(){
-           alert("Falla en la toma de posicion")
-       });
-    }else{
-        alert("Browser not supported");
-    }
-}*/
 function iniciar() {
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(success,fail);
@@ -64,5 +45,22 @@ function buscarInformacion(bus){
 $("#buscarBus").click(function(){
     var bus = document.getElementById('datobusqueda').value;
     $(".contenedorbusqueda").hide();
+    $("#Detalle").show();
     buscarInformacion(bus);
+});
+$("#Detalle").click(function(){
+    var a = document.getElementById('box-datos')
+    if($("#box-datos").css('display') == 'none'){
+        $("#box-datos").slideDown();
+        $("#Detalle").text('Ocultar datos viaje')
+    }else{
+        $("#box-datos").slideUp();
+        $("#Detalle").text('Mostrar datos viaje')
+    }
+});
+$("#btnVolver").click(function(){
+    $(".contenedorbusqueda").show();
+    $("#datobusqueda").val(null);
+    $("#box-datos").hide();
+    $("#Detalle").hide();
 });

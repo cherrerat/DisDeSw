@@ -56,10 +56,48 @@
             </div>
             <hr>
             <button type="button" class="btn btn-success buscarBus" id="buscarBus">Buscar</button>
-            <!--{!! Form::submit('Buscar', ['class' => 'btn btn-success buscarBus', 'id' => 'buscarBus']) !!}-->
             {!! Form::close() !!}
-		</div>
-
+        </div>
+        <button class="btn btn-primary" id="Detalle">Mostrar datos viaje</button>
+        <div class="col-md-8 detalle" id="box-datos">
+            <h5 class="title titulo-centrado">Detalle del viaje</h2>
+            <hr>
+            {!! Form::open(['url' => '']) !!}
+            <div class="form-group col-md-7 grupo-input">
+                {!! Form::label('nombreChofer', 'Nombre chofer ', ['class' => 'form-control-label col-sm-3 ']) !!}
+                <div class="col-sm-5">
+                    {!! Form::text('nombreChofer','', ['class' => 'form-control input-sm', 'id' => 'nombreChofer', 'readonly']) !!}
+                </div>
+            </div>
+            <div class="form-group col-md-7 grupo-input">
+                {!! Form::label('runChofer', 'Run chofer ', ['class' => 'form-control-label col-sm-3 ']) !!}
+                <div class="col-sm-5">
+                    {!! Form::text('runChofer',null, ['class' => 'form-control input-sm', 'id' => 'runChof', 'readonly']) !!}
+                </div>
+            </div>
+            <div class="form-group col-md-7 grupo-input">
+                {!! Form::label('hi', 'Hora inicio viaje', ['class' => 'form-control-label col-sm-3'] ) !!}
+                <div class="col-sm-5">
+                    {!! Form::text('hi', null, ['class' => 'input-sm form-control', 'id' => 'horarioInicio', 'readonly'])!!}
+                </div>
+            </div>
+            <div class="form-group col-md-7 grupo-input">
+                {!! Form::label('hf', 'Hora final viaje', ['class' => 'form-control-label col-sm-3'])!!}
+                <div class="col-sm-5">
+                    {!! Form::text('hf', null, ['class' => 'datosViaje form-control', 'id' => 'horarioFinal', 'readonly'])!!}
+                </div>
+            </div>
+            <div class="col-md-7 grupo-input">
+                {!! Form::label('allegada', 'Anden de llegada', ['class' => 'form-control-label col-sm-3'])!!}
+                <div class="col-sm-5">
+                    {!! Form::text('allegada', null, ['class' => 'andenLlegada form-control', 'id' => 'andenDestino', 'readonly'])!!}
+                </div>
+            </div>
+            <div class="col-md-7 grupo-input">
+                <button type="button" class="btn btn-danger" id="btnVolver">Buscar de nuevo</button>
+            </div>
+            {!! Form::close() !!}
+        </div>
 		<div id="map"></div>
 
 	</div>
