@@ -2,7 +2,7 @@
 
 
 @section('body')
-
+    @include('footer')
     <!-- Navbar -->
     <div class="container navbar">
         <nav class="navbar navbar-light bg-faded background-nav">

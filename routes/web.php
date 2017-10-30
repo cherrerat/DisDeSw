@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/index', function () {
+Route::get('/', function () {
     return view('index');
 });
 
@@ -22,7 +22,7 @@ Route::post('/index', [
     'as' => 'indexTest'
     ]);
 
-Route::post('/welcome', [
+Route::post('/', [
     'uses' => 'c_index@testing',
     'as' => 'welcomeTest'
 ]); 

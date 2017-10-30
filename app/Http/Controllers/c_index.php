@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\bus;
 use Illuminate\Support\Facades\DB;
+use JavaScript;
 
 class c_index extends Controller
 {
@@ -22,7 +23,7 @@ class c_index extends Controller
             $json = json_encode($bus);
             $asd = 'hola';
             if($bus != null){
-                return view('welcome',['asd' => 'asd']);
+                return view('welcome');
             }else{
                 dd('No se encontro patente ingresada.'); //Cambiar por pantalla de error
             }
@@ -36,7 +37,10 @@ class c_index extends Controller
             $bus = DB::table('bus')->where('patente',$request->datobusqueda)->value('ubicacion');
             $json = json_encode($bus);
             if($bus != null){
-                return view('welcome',['ubicacion'=>$json]);
+                JavaScript::put([
+                    'bus' => $bus
+                ]);
+                return view('welcome');
             }else{
                 dd('No se encontro patente ingresada.'); //Cambiar por pantalla de error
             }
