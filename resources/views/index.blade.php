@@ -49,37 +49,18 @@
 		<div class="card rounded align-middle contenedorbusqueda">
             <h2 class="title titulo-centrado">Busqueda de bus</h2>
             <hr>
-            {!! Form::open(['route' => 'map','class' => 'form-horizontal'])!!}
+            {!! Form::open(['url' => '','class' => 'form-horizontal'])!!}
             <div class="form-group">
                 {!! Form::select('formatoBusqueda', ['nviaje' => 'N° de viaje', 'patente' => 'Patente'], 'patente', ['class' => 'custom-select select-box', 'id' => 'select'])!!}
                 {!! Form::text('datobusqueda', null, ['class' => 'form-control inputBus', 'id' => 'datobusqueda', 'placeholder' => 'Ingrese los datos de busqueda'])!!}
             </div>
             <hr>
-            {!! Form::submit('Buscar', ['class' => 'btn btn-success buscarBus', 'id' => 'buscarBus']) !!}
+            <button type="button" class="btn btn-success buscarBus" id="buscarBus">Buscar</button>
+            <!--{!! Form::submit('Buscar', ['class' => 'btn btn-success buscarBus', 'id' => 'buscarBus']) !!}-->
             {!! Form::close() !!}
 		</div>
 
 		<div id="map"></div>
-
-		<script
-            src="https://code.jquery.com/jquery-3.2.1.js"
-            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-            crossorigin="anonymous"></script>
-                <script>
-                    var coord = window.bus;
-                </script>
-        <script src="js/map.js"></script>
-
-        <script src="{{ asset('js/app.js') }}"></script>
-        <script type="text/javascript">
-            $('#buscarBus').on('click', function(){
-                
-                $.get("{{ URL::to('map/data') }}", function(data){ //URL::to('map/data')
-                    alert('test');
-                })
-
-            })
-        </script>
 
 	</div>
     <!--/Main-->

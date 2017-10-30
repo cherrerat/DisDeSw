@@ -45,4 +45,9 @@ class c_index extends Controller
             dd('Error formato de busqueda.');
         }
     }
+    public function buscarInformacion(Request $request){
+        $aux = $request->bus;
+        $bus = DB::table('bus')->where('patente',$aux)->value('ubicacion');
+        return $bus;
+    }
 }
