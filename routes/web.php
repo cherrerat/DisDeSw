@@ -25,4 +25,4 @@ Route::post('/index', [
 Route::post('/welcome', [
     'uses' => 'c_index@testing',
     'as' => 'welcomeTest'
-]);
+]); 

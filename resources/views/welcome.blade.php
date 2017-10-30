@@ -8,9 +8,12 @@
 </head>
 <body>
     <H1> HOLA </H1>
-    {!! Form::open(['url' => 'foo/bar']) !!}
-    {!! Form::label('text', 'Ingrese el texto') !!}
-    {!! Form::text('username')  !!}
-    {!! Form::close()!!}
+    <button type="button" onclick="fc()"></button>
+    <script>
+        var asd = {{ $asd }}
+        function fc() {
+            alert(asd);
+        }
+    </script>
 </body>
 </html>
