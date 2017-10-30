@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddPasajero extends Migration
+class AddTripulacion extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class AddPasajero extends Migration
      */
     public function up()
     {
-        Schema::create('pasajero', function(Blueprint $table){
+        Schema::create('tripulacion', function(Blueprint $table){
             $table->increments('id');
             $table->string('rut');
             $table->string('nombre');
             $table->string('apellido');
             $table->integer('edad');
-            $table->string('antecedentes');
+            $table->integer('horasTrabajadas');
 
             $table->timestamps();
         });

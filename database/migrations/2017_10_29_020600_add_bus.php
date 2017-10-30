@@ -23,7 +23,7 @@ class AddBus extends Migration
             $table->integer('id_pasajero')->unsigned();
 
             //$table->foreign('id_viaje')->references('id')->on('viajes');
-            //$table->foreign('id_tripulacion')->references('id')->on('tripulaciones');
+            $table->foreign('id_tripulacion')->references('id')->on('tripulaciones');
             //$table->foreign('id_pasajero')->references('id')->on('pasajeros');
 
             $table->timestamps();
