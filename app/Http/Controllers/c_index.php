@@ -33,8 +33,9 @@ class c_index extends Controller
     public function testing(Request $request){
         if($request->formatoBusqueda == 'patente'){
             $bus = DB::table('bus')->where('patente',$request->datobusqueda)->value('ubicacion');
+            $json = json_encode($bus);
             if($bus != null){
-                return view('welcome',['ubicacion'=>$bus]);
+                return view('welcome',['ubicacion'=>$json]);
             }else{
                 dd('No se encontro patente ingresada.'); //Cambiar por pantalla de error
             }
