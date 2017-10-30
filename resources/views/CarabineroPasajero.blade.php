@@ -1,6 +1,15 @@
 @extends('hyf.headerdash')
 
 @section('titulo', 'Carabineros de Chile')
+@section('subtitulo', 'Itinerario buses')
+
+
+@section('logoEmpresa')
+  <img src="{!! URL::asset('img/logo/Carabineros.png') !!}" alt="" class="foto-logo" >
+@endsection()
+
+@section('nombreUsuario', 'Joe Doe')
+@section('institucion', 'Carabineros de Chile')
 
 @section('headerRuta')
   <div class="col-md-11 row">

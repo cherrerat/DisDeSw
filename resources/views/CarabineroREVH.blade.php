@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="{{ URL::asset('css/REVH.css') }}">
 @endsection()
 
+
+@section('logoEmpresa')
+  <img src="{!! URL::asset('img/logo/Carabineros.png') !!}" alt="" class="foto-logo" >
+@endsection()
 <!-- Usuario -->
 @section('nombreUsuario', 'Joe Doe')
 @section('institucion', 'Carabineros de Chile')

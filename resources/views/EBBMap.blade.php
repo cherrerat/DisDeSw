@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="{{ URL::asset('css/EBBMap.css')}}">
 @endsection()
 
+@section('logoEmpresa')
+    <span class="texto-logo">EB</span>
+@endsection()
+
 @section('nombreUsuario', 'Joe Doe')
 @section('institucion', 'Empresa de buses')
 

@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="{{ URL::asset('css/EBRADD.css') }}">
 @endsection()
 
+@section('logoEmpresa')
+  <img src="{!! URL::asset('img/logo/conaset.png') !!}" alt="" class="foto-logo" >
+@endsection()
+
+
 <!-- Usuario -->
 @section('nombreUsuario', 'Joe Doe')
 @section('institucion', 'CONASET')

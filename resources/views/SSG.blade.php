@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="{{ URL::asset('css/SSG.css') }}">
 @endsection()
 
+@section('logoEmpresa')
+    <span class="texto-logo">SU</span>
+@endsection()
+
 <!-- Usuario -->
 @section('nombreUsuario', 'Joe Doe')
 @section('institucion', 'Super usuario')
@@ -26,17 +30,6 @@
 @section('barraDeNavegacion')
     <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Navegación principal</li>
-        <li class="treeview">
-            <a href="#">
-            <span>Errores</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i>Historial de errores</a></li>
-            </ul>
-        </li>
         <li class="active treeview menu-open">
             <a href="">
                 <span>Gestor de cuentas</span>

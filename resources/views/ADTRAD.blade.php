@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="{{ URL::asset('css/ADTRA.css') }}">
 @endsection()
 
+
+@section('logoEmpresa')
+    <span class="texto-logo">ADT</span>
+@endsection()
+
 <!-- Usuario -->
 @section('nombreUsuario', 'Joe Doe')
 @section('institucion', 'Administración de terminal')
@@ -23,7 +28,7 @@
 @section('barraDeNavegacion')
 <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Navegación principal</li>
-        <li class=" active treeview menu-open">
+        <li class="treeview">
             <a href="#">
             <span>Itinerario</span>
             <span class="pull-right-container">
@@ -74,7 +79,7 @@
             <!--/Box header-->
             <!--Box body-->
             <div class="box-body">
-                <!-- Gráfico aquí -->
+                <canvas id="accidentesDiarios"></canvas>
             </div>
             <!--/Box body-->
             <!--Box footer-->
@@ -90,4 +95,6 @@
 
 <!-- JS Adicional -->
 @section('js')
+    <script src="{{ URL::asset('https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js') }}"></script>    
+    <script src="{{ URL::asset('js/ADTRAD.js') }}"></script>
 @endsection()

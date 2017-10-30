@@ -38,12 +38,11 @@
           <header class="main-header">
         
             <!-- Logo -->
-            <a href="index2.html" class="logo">
+            <a href="#">
               <!-- mini logo for sidebar mini 50x50 pixels -->
-              <img src="{{ URL::asset('img/user2-160x160.jpg') }}" alt="@yield('imagenDashboard')" class="logo-mini" id="dashboardLogo")>
-              <!-- logo for regular state and mobile devices -->
               <!--<span class="logo-lg"><b>SCIT</b></span>-->
-              <img src="{{ URL::asset('img/user2-160x160.jpg') }}" alt="@yield('imagenDashboard')" class="logo-lg" id="dashboardLogo")>
+              @section('logoEmpresa')
+              @show
             </a>
         
             <!-- Header Navbar: style can be found in header.less -->
@@ -196,6 +195,7 @@
 <script src="{{ URL::asset('js/adminlte/dashboard2.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ URL::asset('js/adminlte/demo.js') }}"></script>
+<script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZKeNzENjHX4nAcELCYKe5MTMZ9bjvi2M&libraries=places"></script>
 <!-- MAP -->
 <script src="{{ URL::asset('js/map.js') }}"></script>
 <!-- PRUEBA -->

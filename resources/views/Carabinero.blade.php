@@ -3,8 +3,14 @@
 @section('titulo', 'Carabineros de Chile')
 @section('subtitulo', 'Busqueda de bus')
 
+
 @section('css')
   <link rel="stylesheet" href="{!! URL::asset('css/Carabinero.css') !!}">
+@endsection()
+
+
+@section('logoEmpresa')
+  <img src="{!! URL::asset('img/logo/Carabineros.png') !!}" alt="" class="foto-logo" >
 @endsection()
 
 @section('nombreUsuario', 'Joe Doe')

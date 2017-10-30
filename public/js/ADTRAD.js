@@ -4,7 +4,7 @@ $(document).ready(function(){
         type: 'bar',
         data: 
         {
-            labels: ["Arica", "Coquimbo", "Valparaiso", "Santiago", "Rancagua", "Concepción"],
+            labels: ["08:00:00", "10:00:00", "12:00:00", "14:00:00", "16:00:00", "18:00:00"],
             datasets: [{
                 data: [12, 19, 3,5, 2,3],
                 backgroundColor: [

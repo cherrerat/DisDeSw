@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}">
 @endsection
 
+@section('nombreUsuario', 'Joe Doe')
+@section('institucion', 'Carabineros de Chile')
+
+@section('logoEmpresa')
+  <img src="{!! URL::asset('img/logo/Carabineros.png') !!}" alt="" class="foto-logo" >
+@endsection()
+
 @section('headerRuta')
     <div class="col-md-11 row">
         <h4 class="h4"><a href="">Carabineros de Chile</a> -> <a href="#">Historial pasajero</a></h4>

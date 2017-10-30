@@ -1,16 +1,20 @@
 @extends('hyf.headerDash')
 
 <!-- Titulo del navegador -->
-@section('titulo','Carabineros de Chile')
-@section('subtitulo', 'Itinerario buses')
+@section('titulo','Super usuario')
+@section('subtitulo', 'Modificar cuenta')
 <!-- CSS extra -->
 @section('css')
     <link rel="stylesheet" href="{{ URL::asset('css/SSGM.css') }}">
 @endsection()
 
+@section('logoEmpresa')
+    <span class="texto-logo">SU</span>
+@endsection()
+
 <!-- Usuario -->
 @section('nombreUsuario', 'Joe Doe')
-@section('institucion', 'Carabineros de Chile')
+@section('institucion', 'Super usuario')
 
 <!-- Ruta de navegación en body -->
 @section('headerRuta')

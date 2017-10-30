@@ -7,6 +7,9 @@
 @section('css')
     <link rel="stylesheet" href="{{ URL::asset('css/EBRAD.css') }}">
 @endsection()
+@section('logoEmpresa')
+    <span class="texto-logo">EB</span>
+@endsection()
 
 <!-- Usuario -->
 @section('nombreUsuario', 'Joe Doe')
@@ -111,5 +114,6 @@
 
 <!-- JS Adicional -->
 @section('js')
+    <script src="{{ URL::asset('https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js') }}"></script>    
     <script src="{{ URL::asset('js/EBRAD.js') }}"></script>
 @endsection()

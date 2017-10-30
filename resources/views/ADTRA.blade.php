@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="{{ URL::asset('css/ADTRA.css') }}">
 @endsection()
 
+    
+@section('logoEmpresa')
+    <span class="texto-logo">ADT</span>
+@endsection()
+
 <!-- Usuario -->
 @section('nombreUsuario', 'Joe Doe')
 @section('institucion', 'Administración de terminal')

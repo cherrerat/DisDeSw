@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="{{ URL::asset('css/SSE.css') }}">
 @endsection()
 
+@section('logoEmpresa')
+    <span class="texto-logo">SU</span>
+@endsection()
+
 <!-- Usuario -->
 @section('nombreUsuario', 'Joe Doe')
 @section('institucion', 'Super usuario')

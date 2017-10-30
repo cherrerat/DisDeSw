@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="{{ URL::asset('css/CarabineroBD.css') }}">
 @endsection()
 
+@section('logoEmpresa')
+  <img src="{!! URL::asset('img/logo/Carabineros.png') !!}" alt="" class="foto-logo" >
+@endsection()
+
 @section('nombreUsuario', 'Joe Doe')
 @section('institucion', 'Carabineros de Chile')
 

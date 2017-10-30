@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="{{ URL::asset('css/EBITH.css') }}">
 @endsection()
 
+@section('logoEmpresa')
+    <span class="texto-logo">EB</span>
+@endsection()
+
 <!-- Usuario -->
 @section('nombreUsuario', 'Joe Doe')
 @section('institucion', 'Empresa de buses')
