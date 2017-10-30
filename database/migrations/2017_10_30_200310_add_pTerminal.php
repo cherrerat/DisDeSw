@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddOrigen extends Migration
+class AddpTerminal extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class AddOrigen extends Migration
      */
     public function up()
     {
-        Schema::create('origen', function(Blueprint $table){
+        Schema::create('pTerminal', function(Blueprint $table){
             $table->increments('id');
-            $table->dateTime();
+            $table->string('direccion');
+            $table->time('hora');
+            $table->integer('anden');
+
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ class AddOrigen extends Migration
      */
     public function down()
     {
-        Schema::drop('origen');
+        Schema::drop('pTerminal');
     }
 }

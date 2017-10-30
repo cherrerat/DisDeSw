@@ -18,13 +18,13 @@ class AddBus extends Migration
             $table->string('patente');
             $table->string('ubicacion');
             $table->integer('velocidad');
-            $table->integer('id_viaje')->unsigned();
-            $table->integer('id_tripulacion')->unsigned();
-            $table->integer('id_pasajero')->unsigned();
+            $table->integer('viaje_id')->unsigned();
+            $table->integer('tripulacion_id')->unsigned();
+            $table->integer('pasajero_id')->unsigned();
 
-            $table->foreign('id_viaje')->references('id')->on('viajes');
-            $table->foreign('id_tripulacion')->references('id')->on('tripulaciones');
-            $table->foreign('id_pasajero')->references('id')->on('pasajeros');
+            $table->foreign('viaje_id')->references('id')->on('viaje');
+            $table->foreign('tripulacion_id')->references('id')->on('tripulacion');
+            $table->foreign('pasajero_id')->references('id')->on('pasajero');
 
             $table->timestamps();
         });

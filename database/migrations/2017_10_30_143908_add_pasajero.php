@@ -19,7 +19,7 @@ class AddPasajero extends Migration
             $table->string('nombre');
             $table->string('apellido');
             $table->integer('edad');
-            $table->string('antecedentes');
+            $table->string('antecedentes')->default('');
 
             $table->timestamps();
         });

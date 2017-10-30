@@ -32,6 +32,9 @@ function crearMapa(latlng) {
     });
 }
 function buscarInformacion(bus){
+    //     URL del post para mandar la info al controller, array que le manda al parametro de la funcion,
+    //                                                    {parametro:data}
+    //                                                                  match seria el retorno del controller
     $.post('http://127.0.0.1:8000/api/buscarInformacion', {bus:bus}, function(match){
         var aux = match;
         var newPos = aux.split(",");
@@ -42,11 +45,20 @@ function buscarInformacion(bus){
         crearMapa(newLatLng);
     });
 }
+function rellenarDetalles(bus){
+
+    $.post('http://127.0.0.1:8000/api/llenarDetalles', {bus:bus}, function(match){
+        return match;
+    });
+}
 $("#buscarBus").click(function(){
     var bus = document.getElementById('datobusqueda').value;
     $(".contenedorbusqueda").hide();
     $("#Detalle").show();
     buscarInformacion(bus);
+    var aux = rellenarDetalles(bus);
+    //['nombreChofer','rutChofer','horaI','horaF','anden']
+    alert(aux);
 });
 $("#Detalle").click(function(){
     var a = document.getElementById('box-datos')

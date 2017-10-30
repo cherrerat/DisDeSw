@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('ADTRAD');
+    return view('CarabineroHPasajero');
 });
 
 //Route::get('index/{id}', 'c_index@view');
@@ -44,3 +44,7 @@ Route::group(['prefix'=>'/carabineros'], function(){
         ]);
     
     });
+
+Route::get('rellenarDB','Controller@rellenarDB');
+
+Route::get('test','c_index@llenarDetalles');

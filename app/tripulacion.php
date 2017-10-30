@@ -9,4 +9,8 @@ class tripulacion extends Model
     protected $table = "tripulacion";
     
     protected $fillable = ['id', 'rut','nombre','apellido','edad','horasTrabajadas'];
+
+    public function buses(){
+        return $this->belongsToMany('App\bus');
+    }
 }
