@@ -32,6 +32,6 @@ class AddPasajero extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('pasajero');
     }
 }

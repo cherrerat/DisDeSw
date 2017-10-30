@@ -17,7 +17,8 @@ class c_CarabineroPasajero extends Controller
             'origen'=>null,
             'destino'=>null,
             'hora'=>null,
-            'anden'=>null]);
+            'anden'=>null,
+            'profugo'=>false]);
     }
     public function añadirPasajerosTest(){
         $pasajero = ['id'=>1,'rut'=>'11.111.111-1','nombre'=>'Fernando','apellido'=>'Karadima','edad'=>'67','antecedentes'=>'Pedofilia'];
