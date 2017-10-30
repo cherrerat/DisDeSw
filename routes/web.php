@@ -11,14 +11,18 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/index', function () {
     return view('index');
 });
 
 //Route::get('index/{id}', 'c_index@view');
 
-Route::post('/', [
+Route::post('/index', [
     'uses' => 'c_index@store',
     'as' => 'indexTest'
     ]);
 
+Route::post('/welcome', [
+    'uses' => 'c_index@testing',
+    'as' => 'welcomeTest'
+]);

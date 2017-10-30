@@ -29,4 +29,17 @@ class c_index extends Controller
             dd('Error formato de busqueda.');
         }
     }
+
+    public function testing(Request $request){
+        if($request->formatoBusqueda == 'patente'){
+            $bus = DB::table('bus')->where('patente',$request->datobusqueda)->value('ubicacion');
+            if($bus != null){
+                return view('welcome',['ubicacion'=>$bus]);
+            }else{
+                dd('No se encontro patente ingresada.'); //Cambiar por pantalla de error
+            }
+        }else{
+            dd('Error formato de busqueda.');
+        }
+    }
 }
