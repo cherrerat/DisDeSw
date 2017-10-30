@@ -72,19 +72,19 @@
     {!! Form::open(['url' => '']) !!}
       <div class="form-group col-md-8">
         {!! Form::select('formatoBusqueda', ['rpasajero'=>'Run pasajero', 'npasajero'=> 'Nombre pasajero'],'rpasajero', ['class'=>'form-control', 'id'=>'oppasajero']) !!}
-        {!! Form::text('datobusqueda', null, ['class' => 'form-control', 'id' => 'datobusqueda', 'placeholder' => 'Ingrese dato de busqueda']) !!}
+        {!! Form::text('datobusqueda', null, ['class' => 'form-control', 'id' => 'datobusqueda', 'placeholder' => $placeholder]) !!}
         
         <button type="button" class="btn btn-danger" id="btnB">Buscar</button>
       </div>
     {!! Form::close() !!}
   </div>
   <div class="col-md-10" id="infoCompletaChofer">
-    <div class="box">
+    <div class="box" {!! $hidden !!}>
       <div class="box-header">
         <h3 class="box-title">Datos pasajero viaje n°123</h3>
       </div> <!-- box header -->
       <div class="box-body">
-        {!! Form::open(['url' => '', 'class' => 'form-horizontal']) !!}
+        {!! Form::open(['url' => 'buscarPasajero', 'class' => 'form-horizontal']) !!}
         <div class="input-group text-center">
           <img src="{{ URL::asset('img/user2-160x160.jpg') }}" alt="" class="img-thumbnail" id="imgChofer"></br>
           {!! Form::label('runP', 'RUN Pasajero: ')!!}
