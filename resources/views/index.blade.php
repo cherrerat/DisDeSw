@@ -49,7 +49,7 @@
 		<div class="card rounded align-middle contenedorbusqueda">
             <h2 class="title titulo-centrado">Busqueda de bus</h2>
             <hr>
-            {!! Form::open(['route' => 'indexTest','class' => 'form-horizontal'])!!}
+            {!! Form::open(['route' => 'welcomeTest','class' => 'form-horizontal'])!!}
             <div class="form-group">
                 {!! Form::select('formatoBusqueda', ['nviaje' => 'N° de viaje', 'patente' => 'Patente'], 'patente', ['class' => 'custom-select select-box', 'id' => 'select'])!!}
                 {!! Form::text('datobusqueda', null, ['class' => 'form-control inputBus', 'id' => 'datobusqueda', 'placeholder' => 'Ingrese los datos de busqueda'])!!}
