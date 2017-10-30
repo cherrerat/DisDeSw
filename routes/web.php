@@ -15,9 +15,10 @@ Route::get('/', function () {
     return view('CarabineroPasajero');
 });
 
+
 //Route::get('index/{id}', 'c_index@view');
 
-Route::group(['prefix'=>'/index'],function(){
+/*Route::group(['prefix'=>'/index'],function(){
 
     Route::get('map',[
         'uses'=>'c_index@view',
@@ -26,6 +27,7 @@ Route::group(['prefix'=>'/index'],function(){
 
 });
 
+<<<<<<< HEAD
 Route::get('map/data', 'c_index@testing')->name('mapData');
 
 Route::group(['prefix'=>'/carabineros'], function(){
@@ -44,3 +46,6 @@ Route::group(['prefix'=>'/carabineros'], function(){
     ]);
 
 });
+=======
+Route::get('map/data', 'c_index@testing')->name('mapData')*/
+>>>>>>> f531943230ccee161d69c716025249f8e472050d
