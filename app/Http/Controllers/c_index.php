@@ -22,7 +22,6 @@ class c_index extends Controller
             $json = json_encode($bus);
             if($bus != null){
                 return $json;
-                //pene
             }else{
                 dd('No se encontro patente ingresada.'); //Cambiar por pantalla de error
             }

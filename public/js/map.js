@@ -33,7 +33,10 @@ $(document).ready(function()
 	});
 	google.maps.event.trigger(map, 'resize');
 	
-	
+	$.getJSON('http://127.0.0.1:8000/indexTest.php',function(data){
+		var array = JSON.parse(data);
+		alert(array.length);
+	});
 });
 function handleLocationError(browserHasGeolocation, infoWindow, pos)
 {
