@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('CarabineroHPasajero');
+    return view('index');
 });
 
 //Route::get('index/{id}', 'c_index@view');

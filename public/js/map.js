@@ -48,7 +48,17 @@ function buscarInformacion(bus){
 function rellenarDetalles(bus){
 
     $.post('http://127.0.0.1:8000/api/llenarDetalles', {bus:bus}, function(match){
-        return match;
+        console.log(match);
+        var nombre = match.nombreChofer;
+        var run = match.rutChofer;
+        var anden = match.anden;
+        var horaF = match.horaF;
+        var horaI = match.horaI;
+        $("#nombreChofer").val(nombre);
+        $("#runChof").val(run);
+        $("#horarioInicio").val(horaI);
+        $("#horarioFinal").val(horaF);
+        $("#andenDestino").val(anden);
     });
 }
 $("#buscarBus").click(function(){
@@ -56,9 +66,7 @@ $("#buscarBus").click(function(){
     $(".contenedorbusqueda").hide();
     $("#Detalle").show();
     buscarInformacion(bus);
-    var aux = rellenarDetalles(bus);
-    //['nombreChofer','rutChofer','horaI','horaF','anden']
-    alert(aux);
+    rellenarDetalles(bus);
 });
 $("#Detalle").click(function(){
     var a = document.getElementById('box-datos')
@@ -73,6 +81,11 @@ $("#Detalle").click(function(){
 $("#btnVolver").click(function(){
     $(".contenedorbusqueda").show();
     $("#datobusqueda").val(null);
+    $("#nombreChofer").val(null);
+    $("#runChof").val(null);
+    $("#horarioInicio").val(null);
+    $("#horarioFinal").val(null);
+    $("#andenDestino").val(null);
     $("#box-datos").hide();
     $("#Detalle").hide();
 });
