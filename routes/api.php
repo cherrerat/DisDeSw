@@ -16,5 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Rutas utilizadas por JS, Ajax y JQuery.
 Route::post('/buscarInformacion', 'c_index@buscarInformacion');
 Route::post('/llenarDetalles', 'c_index@llenarDetalles');

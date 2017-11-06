@@ -11,12 +11,12 @@
 |
 */
 
+//Ruta raiz
 Route::get('/', function () {
     return view('index');
 });
 
-//Route::get('index/{id}', 'c_index@view');
-
+//Rutas index
 Route::group(['prefix'=>'/index'],function(){
 
     Route::get('map',[
@@ -26,8 +26,7 @@ Route::group(['prefix'=>'/index'],function(){
 
 });
 
-Route::get('map/data', 'c_index@testing')->name('mapData');
-
+//Rutas modulo Carabineros
 Route::group(['prefix'=>'/carabineros'], function(){
     
         Route::get('vistaPasajero',[
@@ -45,6 +44,7 @@ Route::group(['prefix'=>'/carabineros'], function(){
     
     });
 
+//Rutas de testing y poblamiento de datos de prueba
 Route::get('rellenarDB','Controller@rellenarDB');
 
 Route::get('test','c_index@llenarDetalles');

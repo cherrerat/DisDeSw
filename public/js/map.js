@@ -1,32 +1,31 @@
 var mapa;
 var marker;
 var latlgn;
-$(document).ready(function(){
+$(document).ready(function(){ //finalizacion de ejecucion de la vista
     iniciar();
 });
 function iniciar() {
     if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(success,fail);
+        navigator.geolocation.getCurrentPosition(success,fail); //Metodo de la API de googleMaps para detectar posicion del usuario
     }else{
         alert("No es soportado");
     }
 }
-function success(position) {
-    //console.log(position);
+function success(position) { //En caso de exito para la funcion iniciar()
     var lat = position.coords.latitude;
     var lng = position.coords.longitude;
-    latlgn = new google.maps.LatLng(lat, lng)
+    latlgn = new google.maps.LatLng(lat, lng) //Conversion de los strings con las cordenadas a un formato soportado por la API de googleMaps
     crearMapa(latlgn);
 }
-function fail() {
-    crearMapa({lat: -33.447487, lng: -70.673676});
+function fail() { //En caso de falla para la funcion iniciar()
+    crearMapa({lat: -33.447487, lng: -70.673676}); //Coordenadas por defecto entregadas para la creacion de un mapa en la vista
 }
-function crearMapa(latlng) {
+function crearMapa(latlng) { //Funcion para crear el mapa de Google en la vista
     mapa = new google.maps.Map(document.getElementById('map'), {
         center: latlng,
         zoom: 12
     });
-    marker = new google.maps.Marker({
+    marker = new google.maps.Marker({ //Añadir marcador en el mapa
         position: latlng,
         map: mapa
     });
@@ -54,6 +53,7 @@ function rellenarDetalles(bus){
         var anden = match.anden;
         var horaF = match.horaF;
         var horaI = match.horaI;
+        //Cambio de datos de los Forms
         $("#nombreChofer").val(nombre);
         $("#runChof").val(run);
         $("#horarioInicio").val(horaI);
@@ -61,6 +61,7 @@ function rellenarDetalles(bus){
         $("#andenDestino").val(anden);
     });
 }
+//Funcion ejecutada al clickear en el boton del Index "Buscar Bus"
 $("#buscarBus").click(function(){
     var bus = document.getElementById('datobusqueda').value;
     $(".contenedorbusqueda").hide();
@@ -68,6 +69,7 @@ $("#buscarBus").click(function(){
     buscarInformacion(bus);
     rellenarDetalles(bus);
 });
+//Funcion ejecutada al clickear en el boton del Index "Mostrar datos viaje"
 $("#Detalle").click(function(){
     var a = document.getElementById('box-datos')
     if($("#box-datos").css('display') == 'none'){
@@ -78,6 +80,7 @@ $("#Detalle").click(function(){
         $("#Detalle").text('Mostrar datos viaje')
     }
 });
+//Funcion ejecutada al clickear en el boton del Index "Volver a buscar"
 $("#btnVolver").click(function(){
     $(".contenedorbusqueda").show();
     $("#datobusqueda").val(null);
