@@ -36,12 +36,22 @@ function buscarInformacion(bus){
     //                                                                  match seria el retorno del controller
     $.post('http://127.0.0.1:8000/api/buscarInformacion', {bus:bus}, function(match){
         var aux = match;
-        var newPos = aux.split(",");
-        var lat = newPos[0].split("{lat: ");
-        var lng = newPos[1].split("lng: ");
-        lng[1] = lng[1].replace("}","");
-        newLatLng = new google.maps.LatLng(lat[1],lng[1]);
-        crearMapa(newLatLng);
+        console.log(match);
+        if(aux == '')
+        {
+            alert("Bus no encontrado");  
+        }else{
+            var newPos = aux.split(",");
+            var lat = newPos[0].split("{lat: ");
+            var lng = newPos[1].split("lng: ");
+            var bus = document.getElementById('datobusqueda').value;
+            lng[1] = lng[1].replace("}","");
+            newLatLng = new google.maps.LatLng(lat[1],lng[1]);
+            $(".contenedorbusqueda").hide();
+            $("#Detalle").show();
+            crearMapa(newLatLng);
+            rellenarDetalles(bus);
+        }
     });
 }
 function rellenarDetalles(bus){
@@ -64,10 +74,8 @@ function rellenarDetalles(bus){
 //Funcion ejecutada al clickear en el boton del Index "Buscar Bus"
 $("#buscarBus").click(function(){
     var bus = document.getElementById('datobusqueda').value;
-    $(".contenedorbusqueda").hide();
-    $("#Detalle").show();
+    bus = bus.toUpperCase();
     buscarInformacion(bus);
-    rellenarDetalles(bus);
 });
 //Funcion ejecutada al clickear en el boton del Index "Mostrar datos viaje"
 $("#Detalle").click(function(){
