@@ -13,7 +13,7 @@
 
 //Ruta raiz
 Route::get('/', function () {
-    return view('index');
+    return view('CSTRAD');
 });
 
 //Rutas index

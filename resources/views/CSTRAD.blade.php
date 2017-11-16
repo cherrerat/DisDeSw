@@ -48,18 +48,6 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> Buses </a></li>
             </ul>
         </li>
-        <li class="active treeview menu-open">
-            <a href="#">
-            <span>Reporte</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-            <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Accidentes diarios</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i>Exceso de velocidad</a></li>
-            </ul>
-        </li>
     </ul>
 @endsection()
 
@@ -97,5 +85,6 @@
 
 <!-- JS Adicional -->
 @section('js')
+    <script src="{{ URL::asset('https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js') }}"></script>   
     <script src="{{ URL::asset('js/EBRAD.js') }}"></script>
 @endsection()
