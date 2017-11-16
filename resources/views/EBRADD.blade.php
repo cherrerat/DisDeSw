@@ -20,7 +20,7 @@
 <!-- Ruta de navegación en body -->
 @section('headerRuta')
     <div class="col-md-11 row">
-        <h4 class="h4"><a href="">Empresa de buses </a> -> <a href="#">Reporte:Accidentes Diarios</a> -> <a href="">Detalle</a></h4>
+        <h4 class="h4"><a href="">Empresa de buses </a> -> <a href="#">Reporte:Flujo de accidentes</a> -> <a href="">Detalle</a></h4>
     </div>
 @endsection()
 
@@ -61,7 +61,7 @@
             </span>
             </a>
             <ul class="treeview-menu">
-            <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Accidentes diarios</a></li>
+            <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Flujos de accidentes </a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Exceso de velocidad</a></li>
             </ul>
         </li>
@@ -132,14 +132,14 @@
                             <tr>
                                 <td>10:02:00</td>
                                 <td>2</td>
-                                <td>Empresa 1</td>
+                                <td>Empresa 2</td>
                                 <td>XX-XX-XY</td>
                                 <td>0</td>
                             </tr>
                             <tr>
                                 <td>13:02:20</td>
                                 <td>1</td>
-                                <td>Empresa 1</td>
+                                <td>Empresa 2</td>
                                 <td>XX-XX-YX</td>
                                 <td>1</td>
                             </tr>

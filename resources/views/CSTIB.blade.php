@@ -56,10 +56,11 @@
             </span>
             </a>
             <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i>Accidentes diarios</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i>Exceso de velocidad</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Exceso de velocidad </a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Flujo de accidentes </a></li>
             </ul>
         </li>
+        
     </ul>
 @endsection()
 

@@ -21,7 +21,7 @@
 <!-- Ruta de navegación en body -->
 @section('headerRuta')
     <div class="col-md-11 row">
-        <h4 class="h4"><a href="">CONASET</a> -> <a href="#">Reporte: accidentes diarios</a> -> <a href="#">Detalle</a></h4>
+        <h4 class="h4"><a href="">CONASET</a> -> <a href="#">Reporte: Flujo de accidentes</a> -> <a href="#">Detalle</a></h4>
     </div>
 @endsection()
 
@@ -48,6 +48,18 @@
             </a>
             <ul class="treeview-menu">
             <li><a href="#"><i class="fa fa-circle-o"></i> Buses </a></li>
+            </ul>
+        </li>
+        <li class="active treeview menu-open">
+            <a href="#">
+            <span>Reporte</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+            </a>
+            <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-circle-o"></i> Exceso de velocidad </a></li>
+            <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Flujo de accidentes </a></li>
             </ul>
         </li>
     </ul>
