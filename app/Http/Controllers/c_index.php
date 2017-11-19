@@ -19,7 +19,7 @@ class c_index extends Controller
     public function C_Buscar_Viaje(Request $request){
         $aux = $request->bus;
         $viaje=new viaje;
-        $bus= $viaje->buscarInformacion();
+        $bus= $viaje->buscarInformacion($aux);
         return $bus;
     }
     public function llenarDetalles(Request $request){

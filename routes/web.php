@@ -43,8 +43,16 @@ Route::group(['prefix'=>'/carabineros'], function(){
         ]);
     
     });
+Route::group(['prefix'=>'/usuario'], function(){
+
+    Route::post('login',[
+        'uses'=>'C_Usuario@VerificarUsuario',
+        'as' => 'login'
+    ]);
+
+});
 
 //Rutas de testing y poblamiento de datos de prueba
 Route::get('rellenarDB','Controller@rellenarDB');
 
-Route::get('test/{bus}','c_index@llenarDetalles');
+Route::get('test/{bus}','c_index@C_Buscar_Viaje');
