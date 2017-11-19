@@ -21,13 +21,11 @@ class AddViaje extends Migration
             $table->integer('destino_id')->unsigned();
             $table->integer('AndenDestino');
             $table->string('HoraDeDestino');
-            $table->integer('ruta_id')->unsigned();
             $table->integer('bus_id')->unsigned();
             $table->integer('tripulante_id')->unsigned();
 
             $table->foreign('origen_id')->references('id')->on('terminal');
             $table->foreign('destino_id')->references('id')->on('terminal');
-            $table->foreign('ruta_id')->references('id')->on('ruta');
             $table->foreign('bus_id')->references('id')->on('bus');
             $table->foreign('tripulante_id')->references('id')->on('tripulante');
 

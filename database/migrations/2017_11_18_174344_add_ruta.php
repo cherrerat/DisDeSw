@@ -16,6 +16,9 @@ class AddRuta extends Migration
         Schema::create('ruta', function(Blueprint $table){
             $table->increments('id');
             $table->string('Camino');
+            $table->integer('viaje_id')->unsigned();
+
+            $table->foreign('viaje_id')->references('id')->on('viaje');
 
             $table->timestamps();
         });

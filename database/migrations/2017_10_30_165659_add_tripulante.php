@@ -26,7 +26,7 @@ class AddTripulante extends Migration
             $table->string('CargoPrincipal');
             $table->string('InicioContrato');
             $table->string('FinContrato');
-            $table->integer('empresaDeBus_id');
+            $table->integer('empresaDeBus_id')->unsigned();
 
             $table->foreign('empresaDeBus_id')->references('id')->on('empresaDeBus');
 

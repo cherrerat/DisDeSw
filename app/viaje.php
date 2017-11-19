@@ -9,7 +9,7 @@ class viaje extends Model
     //Nombre de la tabla correspondiente en la base de datos
     protected $table = "viaje";
     //Atributos del modelo
-    protected $fillable = ['id', 'origen_id','AndenOrigen','HoraDeInicio','destino_id','AndenDestino','HoraDeDestino','ruta_id','bus_id','tripulante_id'];
+    protected $fillable = ['id', 'origen_id','AndenOrigen','HoraDeInicio','destino_id','AndenDestino','HoraDeDestino','bus_id','tripulante_id'];
     //Funciones del modelo
     function terminalO(){
         return $this->belongsToMany('App\viaje','viajeterminal','viaje_id','origen_id');
@@ -18,7 +18,7 @@ class viaje extends Model
         return $this->belongsToMany('App\viaje','viajeterminal','viaje_id','destino_id');
     }
     function ruta(){
-        return $this->belongsTo('App\ruta');
+        return $this->hasMany('App\ruta');
     }
     function pasajeros(){
         return $this->belongsToMany('App\pasajero','viajepasajero','viaje_id','pasajero_id');
