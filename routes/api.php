@@ -18,5 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //Rutas utilizadas por JS, Ajax y JQuery.
-Route::post('/buscarInformacion', 'c_index@buscarInformacion');
+Route::post('/buscarInformacion', 'c_index@C_Buscar_Viaje');
 Route::post('/llenarDetalles', 'c_index@llenarDetalles');

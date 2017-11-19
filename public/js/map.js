@@ -100,3 +100,9 @@ $("#btnVolver").click(function(){
     $("#box-datos").hide();
     $("#Detalle").hide();
 });
+$("#btnIngresar").click(function(){
+    var user=document.getElementById('inputUsername').value;
+    var pass=document.getElementById('inputPassword').value;
+    var post=[user,pass];
+    $.post('http://127.0.0.1:8000/api/');
+});

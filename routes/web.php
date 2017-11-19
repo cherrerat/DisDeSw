@@ -47,4 +47,4 @@ Route::group(['prefix'=>'/carabineros'], function(){
 //Rutas de testing y poblamiento de datos de prueba
 Route::get('rellenarDB','Controller@rellenarDB');
 
-Route::get('test','c_index@llenarDetalles');
+Route::get('test/{bus}','c_index@llenarDetalles');

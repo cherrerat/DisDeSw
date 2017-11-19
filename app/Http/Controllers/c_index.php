@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\bus;
+use App\viaje;
 use Illuminate\Support\Facades\DB;
 use JavaScript;
 use Illuminate\Routing\UrlGenerator;
@@ -16,25 +16,16 @@ class c_index extends Controller
 
     //$request seria como el diccionario que manda el Ajax, ({bus:bus}) -> se mostraria como ({parametro:data}) y para asignarlo $algo=$request->parametro;
     //$algo queda como: 'data'
-    public function buscarInformacion(Request $request){
+    public function C_Buscar_Viaje(Request $request){
         $aux = $request->bus;
-        $bus = DB::table('bus')->where('patente',$aux)->value('ubicacion');
+        $viaje=new viaje;
+        $bus= $viaje->buscarInformacion();
         return $bus;
     }
     public function llenarDetalles(Request $request){
         $aux = $request->bus;
-        $bus = DB::table('bus')->where('patente',$aux)->first(); //Query a la DB buscando patente en la tabla bus
-        //['id'=>1, 'patente'=>'BC-CL-35', 'ubicacion'=>'{lat: -33.586, lng: -70.714}','velocidad'=>90,'viaje_id'=>1,'tripulacion_id'=>3,'pasajero_id'=>1]
-        $viaje = DB::table('viaje')->where('origen_id',$bus->viaje_id)->first(); //Query a la DB buscando origen_id en la tabla viaje
-        //['id'=>1, 'origen_id'=>1,'destino_id'=>4,'ruta_id'=>1]
-        $origen = DB::table('pTerminal')->where('id',$viaje->origen_id)->first(); //Query a la DB buscando id (origen) en la tabla pTerminal
-        //['id'=>1, 'direccion'=>'San Borja', 'hora'=>'16:00:00', 'anden'=>4]
-        $destino = DB::table('pTerminal')->where('id',$viaje->destino_id)->first(); //Query a la DB buscando id (destino) en la tabla pTerminal
-        //['id'=>4, 'direccion'=>'Talca', 'hora'=>'18:00:00', 'anden'=>5]
-        $tripulacion = DB::table('tripulacion')->where('id',$bus->tripulacion_id)->first(); //Query a la DB buscando id en la tabla tripulacion
-        //['id'=>3,'rut'=>'18.457.109-9','nombre'=>'Cristian','apellido'=>'Ordoñes','edad'=>34,'horasTrabajadas'=>5]
-        $nombresito=$tripulacion->nombre . ' ' . $tripulacion->apellido; //concadenacion de nombre + apellido
-        $aux1= ['nombreChofer'=>$nombresito,'rutChofer'=>$tripulacion->rut,'horaI'=>$origen->hora,'horaF'=>$destino->hora,'anden'=>$destino->anden]; //Array con datos solicitados
+        $viaje=new viaje;
+        $aux1 = $viaje->llenarDetalles($aux);
         return $aux1;
     }
 }
