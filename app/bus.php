@@ -9,15 +9,16 @@ class bus extends Model
     //Nombre de la tabla correspondiente en la base de datos
     protected $table = "bus";
     //Atributos del modelo
-    protected $fillable = ['id', 'patente', 'ubicacion','velocidad','viaje_id','tripulacion_id','pasajero_id'];
+    protected $fillable = ['id', 'Patente', 'CapacidadMax','empresaDeBus_id'];
     //Funciones del modelo
-    public function pasajeros(){
-        return $this->belongsToMany('App\pasajero');
+    function empresaDeBus(){
+        return $this->belongsTo('App\empresaDeBus');
     }
-    public function tripulantes(){
-        return $this->belongsToMany('App\tripulacion');
+    function viajes(){
+        return $this->hasMany('App\viaje');
     }
-    public function viajes(){
-        return $this->belongsToMany('App\viaje');
+    function estadisticasBus(){
+        return $this->hasMany('App\estadisticaBus');
     }
+
 }

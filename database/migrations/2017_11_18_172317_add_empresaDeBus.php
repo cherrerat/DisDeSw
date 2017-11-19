@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddpTerminal extends Migration
+class AddEmpresaDeBus extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class AddpTerminal extends Migration
      */
     public function up()
     {
-        Schema::create('pTerminal', function(Blueprint $table){
+        Schema::create('empresaDeBus', function(Blueprint $table){
             $table->increments('id');
-            $table->string('direccion');
-            $table->time('hora');
-            $table->integer('anden');
+            $table->string('Rut');
+            $table->string('Nombre');
 
             $table->timestamps();
         });
@@ -30,6 +29,6 @@ class AddpTerminal extends Migration
      */
     public function down()
     {
-        Schema::drop('pTerminal');
+        Schema::drop('empresaDeBus');
     }
 }

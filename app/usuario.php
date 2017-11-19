@@ -4,15 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ruta extends Model
+class usuario extends Model
 {
     //Nombre de la tabla correspondiente en la base de datos
-    protected $table = "ruta";
+    protected $table = "usuario";
     //Atributos del modelo
-    protected $fillable = ['id', 'Camino'];
+    protected $fillable = ['id', 'Patente', 'User','Password','Perfil'];
     //Funciones del modelo
-    function viajes(){
-        return $this->hasMany('App\viaje');
-    }
     
 }

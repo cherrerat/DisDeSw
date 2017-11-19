@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddTripulacion extends Migration
+class AddUsuario extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class AddTripulacion extends Migration
      */
     public function up()
     {
-        Schema::create('tripulacion', function(Blueprint $table){
+        Schema::create('usuario', function(Blueprint $table){
             $table->increments('id');
-            $table->string('rut');
-            $table->string('nombre');
-            $table->string('apellido');
-            $table->integer('edad');
-            $table->integer('horasTrabajadas');
+            $table->string('User');
+            $table->string('Password');
+            $table->string('Perfil');
 
             $table->timestamps();
         });
@@ -32,6 +30,6 @@ class AddTripulacion extends Migration
      */
     public function down()
     {
-        Schema::drop('tripulacion');
+        Schema::drop('usuario');
     }
 }

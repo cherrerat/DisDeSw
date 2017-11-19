@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddPasajero extends Migration
+class AddBus extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class AddPasajero extends Migration
      */
     public function up()
     {
-        Schema::create('pasajero', function(Blueprint $table){
+        Schema::create('bus', function(Blueprint $table){
             $table->increments('id');
-            $table->string('Run');
-            $table->string('Nombre');
-            $table->string('Apellido');
-            $table->integer('Telefono');
-            $table->boolean('Profugo')->default('0');
+            $table->string('Patente');
+            $table->integer('CapacidadMax');
+            $table->integer('empresaDeBus_id')->unsigned();
+
+            $table->foreign('empresaDeBus_id')->references('id')->on('empresaDeBus');
 
             $table->timestamps();
         });
@@ -32,6 +32,6 @@ class AddPasajero extends Migration
      */
     public function down()
     {
-        Schema::drop('pasajero');
+        Schema::drop('bus');
     }
 }
