@@ -69,6 +69,10 @@ Route::group(['prefix'=>'/carabineros'], function(){
             'uses'=>'c_Carabinero@C_listarViajes',
             'as'=>'historialPasajero'
         ]);
+        Route::post('detallesItinerario',[
+            'uses'=>'c_Carabinero@C_Ver_Detalles_Itinerario',
+            'as'=>'detallesItinerario'
+        ]);
     
     });
 Route::group(['prefix'=>'/usuario'], function(){

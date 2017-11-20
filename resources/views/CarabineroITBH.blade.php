@@ -51,7 +51,7 @@
                     </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="/carabineros/vistaItinerario"><i class="fa fa-circle-o"></i> Buses </a></li>
+                    <li  class="active"><a href="/carabineros/vistaItinerario"><i class="fa fa-circle-o"></i> Buses </a></li>
                   </ul>
                 </li>
                 <li class="treeview">
@@ -146,7 +146,7 @@
             <!-- /Box body -->
             <!-- Box footer -->
             <div class="box-footer">
-                <button class="btn" id="btnVolver">Volver</button>
+            <a href="/carabineros/vistaItinerario" id="refBus"><button type="buton" class="btn" id="btnVolver">Volver</button></a>
             </div>
             <!-- /Box footer -->
         </div>

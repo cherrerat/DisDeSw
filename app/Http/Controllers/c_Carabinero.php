@@ -78,4 +78,7 @@ class c_Carabinero extends Controller
         $aux1=$pasajero->listarViajes($aux);
         return view('CarabineroHPasajero',$aux1);
     }
+    public function C_Ver_Detalles_Itinerario(Request $request){
+        return view('CarabineroITBH');
+    }
 }

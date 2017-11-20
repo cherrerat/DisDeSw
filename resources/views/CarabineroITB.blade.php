@@ -38,7 +38,7 @@
                     </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li  class="active"><a href="/carabineros/vistaBus"><i class="fa fa-circle-o"></i>Bus</a></li>
+                    <li><a href="/carabineros/vistaBus"><i class="fa fa-circle-o"></i>Bus</a></li>
                     <li><a href="/carabineros/vistaPasajero"><i class="fa fa-circle-o"></i>Pasajero</a></li>
                   </ul>
                 </li>
@@ -51,7 +51,7 @@
                     </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="/carabineros/vistaItinerario"><i class="fa fa-circle-o"></i> Buses </a></li>
+                    <li  class="active"><a href="/carabineros/vistaItinerario"><i class="fa fa-circle-o"></i> Buses </a></li>
                   </ul>
                 </li>
                 <li class="treeview">
@@ -95,15 +95,15 @@
         </div><!-- /Box header -->
         <!-- Box body -->
         <div class="box-body">
-        {!! Form::open(['url' => '', 'class' => 'form-horizontal']) !!}
+        {!! Form::open(['url' => 'carabineros/detallesItinerario', 'class' => 'form-horizontal']) !!}
         <div class="col-md-11 form-group grupo">
             {!! Form::label('empresaBus', 'Empresa', ['class' => 'form-control-label col-sm-1']) !!}
             <div class="col-sm-3">
-                {!! Form::select('empresaBus', ['E1' => 'Empresa 1', 'E2' => 'Empresa 2', 'E3' => 'Empresa 3'], 'E1', ['class' => 'form-control input-sm']) !!}
+                {!! Form::select('empresaBus', ['E1' => 'Tur Bus', 'E2' => 'Empresa 2', 'E3' => 'Empresa 3'], 'E1', ['class' => 'form-control input-sm']) !!}
             </div>
             {!! Form::label('bus', 'Bus', ['class' => 'form-control-label col-sm-1']) !!}
             <div class="col-sm-3">
-                {!! Form::select('bus', ['B1' => 'XX-XX-XX', 'B2' => 'XX-XX-XY', 'B3' => 'XX-XY-XX', 'B4' => 'XX-XY-XY', 'B5' => 'XX-XY-YX', 'B6' => 'XX-XY-YY', 'B7' => 'XX-YX-XX', 'B8' => 'XX-YX-XY', 'B9' => 'XX-YX-YX', 'B10' => 'XX-YX-YY'], 'B1', ['class' => 'form-control input-sm'])!!}
+                {!! Form::select('bus', ['B1' => 'BC-CL-35', 'B2' => 'BC-CL-34', 'B3' => 'CL-BC-35', 'B4' => 'XX-XY-XY', 'B5' => 'XX-XY-YX', 'B6' => 'XX-XY-YY', 'B7' => 'XX-YX-XX', 'B8' => 'XX-YX-XY', 'B9' => 'XX-YX-YX', 'B10' => 'XX-YX-YY'], 'B1', ['class' => 'form-control input-sm'])!!}
             </div>
         </div>
         <div class="form-group col-md-11 ">
@@ -113,13 +113,13 @@
             </div>
         </div>
         <div class="form-group col-md-11 btnBusqueda">
-            <button type="button" class="btn btn-success" id="busquedaItinerario">Busqueda</button>
+            <button type="submit" class="btn btn-success" id="busquedaItinerario">Busqueda</button>
         </div>
         {!! Form::close() !!}
         </div><!-- /Box body-->
         <!-- Box footer -->
         <div class="box-footer">
-            <button type="button" class="btn" id="btnVolver">Volver</button>
+            <a href="/carabineros/vistaBus" id="refBus"><button type="buton" class="btn" id="btnVolver">Volver</button></a>
         </div><!-- /Box footer-->
     </div><!-- /Box principal -->
 </div><!-- /Container -->
