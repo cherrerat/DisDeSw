@@ -89,7 +89,7 @@
   <div class="col-md-10" id="infoCompletaChofer">
     <div class="box" {!! $hidden !!}>
       <div class="box-header">
-        <h3 class="box-title">Datos pasajero viaje n° {!! $viaje_id !!}</h3>
+        <h3 class="box-title">Datos pasajero viaje n° {!! $numviaje !!}</h3>
       </div> <!-- box header -->
       <div class="box-body">
         {!! Form::open(['url' => 'carabineros/historialPasajero', 'class' => 'form-horizontal']) !!}

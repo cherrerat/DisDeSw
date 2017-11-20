@@ -22,7 +22,8 @@ class c_Carabinero extends Controller
             'anden'=>null,
             'profugo'=>false,
             'pasajero_id'=>null,
-            'viaje_id'=>null]);
+            'viaje_id'=>null,
+            'numviaje'=>null]);
     }
     public function C_verBus(){
         return view('Carabinero',[

@@ -30,6 +30,7 @@ class pasajero extends Model
                     //dd($viajepasajero);
                     $origen = DB::table('terminal')->where('id',$viaje->origen_id)->value('Direccion');
                     $destino = DB::table('terminal')->where('id',$viaje->destino_id)->value('Direccion');
+                    $ruta=DB::table('ruta')->where('viaje_id',$viaje->id)->value('camino');
                     if($pasajero->Profugo == 0){
                         return [
                             'hidden'=>"",
@@ -42,7 +43,8 @@ class pasajero extends Model
                             'anden'=>$viaje->AndenDestino,
                             'profugo'=>false,
                             'pasajero_id'=>$pasajero->id,
-                            'viaje_id'=>$viaje->id
+                            'viaje_id'=>$ruta,
+                            'numviaje'=>$viaje->id
                             ];
                     }else{
                         return [
@@ -56,7 +58,8 @@ class pasajero extends Model
                             'anden'=>$viaje->AndenDestino,
                             'profugo'=>true,
                             'pasajero_id'=>$pasajero->id,
-                            'viaje_id'=>$viaje->id
+                            'viaje_id'=>$ruta,
+                            'numviaje'=>$viaje->id
                             ];
                     }
                 }else{
@@ -72,7 +75,8 @@ class pasajero extends Model
                             'anden'=>null,
                             'profugo'=>false,
                             'pasajero_id'=>$pasajero->id,
-                            'viaje_id'=>null
+                            'viaje_id'=>null,
+                            'numviaje'=>null
                             ];
                     }else{
                         return [
@@ -86,7 +90,8 @@ class pasajero extends Model
                             'anden'=>null,
                             'profugo'=>true,
                             'pasajero_id'=>$pasajero->id,
-                            'viaje_id'=>null
+                            'viaje_id'=>null,
+                            'numviaje'=>null
                             ];
                     }
                 }
@@ -102,7 +107,8 @@ class pasajero extends Model
                     'anden'=>null,
                     'profugo'=>false,
                     'pasajero_id'=>null,
-                    'viaje_id'=>null
+                    'viaje_id'=>null,
+                    'numviaje'=>null
                 ];
             }
         }

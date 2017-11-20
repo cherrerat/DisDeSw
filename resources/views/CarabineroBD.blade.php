@@ -122,7 +122,7 @@
       {!! Form::close() !!}
     </div><!-- the body -->
     <div class="box-footer">
-          <button type="button" class="btn" id="btnVolver">Volver</button>
+    <a href="/carabineros/vistaBus" id="refBus"><button type="buton" class="btn" id="btnVolver">Volver</button></a>
     </div>
     </div>
   </div>
