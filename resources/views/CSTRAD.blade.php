@@ -78,6 +78,7 @@
             <!--/Box header-->
             <!--Box body-->
             <div class="box-body">
+                <!--{{ Form::hidden('repCST', $acc, ['id' => 'flxac']) }}-->
                 <canvas id="FlujoDeAccidentes"></canvas>
                 <div class="form-group">
                     <button class="btn btn-primary" id="btnDetalle">Ver detalle</button>
