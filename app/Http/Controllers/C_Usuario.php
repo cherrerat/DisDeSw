@@ -4,24 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\usuario;
 
 class C_Usuario extends Controller
 {
-    public function view(){
-        return view('Carabinero'); //abrir vista 'Carabinero'
-    }
     public function C_VerificarUsuario(Request $request){
-        $user=$request->username;
-        $pass=$request->password;
-        $user1=DB::table('usuario')->where('User',$user)->first();
-        if($user1!=null){
-            if($pass==$user1->Password){
-                
-            }else{
-                return view('index');
-            }
-        }else{
-            return view('index');
-        }
+        $user=$request->User;
+        $pass=$request->Password;
+        $usuario=new usuario;
+        $aux1=$usuario->VerificarUsuario($user,$pass);
+        return $aux1;
+    }
+    public function vista(Request $request){
+        $perfil=$request->Perfil;
+        return view($perfil);
     }
 }

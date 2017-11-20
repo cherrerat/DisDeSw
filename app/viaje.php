@@ -12,31 +12,31 @@ class viaje extends Model
     //Atributos del modelo
     protected $fillable = ['id', 'origen_id','AndenOrigen','HoraDeInicio','destino_id','AndenDestino','HoraDeDestino','bus_id','tripulante_id'];
     //Funciones del modelo
-    function terminalO(){
+    public function terminalO(){
         return $this->belongsToMany('App\viaje','viajeterminal','viaje_id','origen_id');
     }
-    function terminalD(){
+    public function terminalD(){
         return $this->belongsToMany('App\viaje','viajeterminal','viaje_id','destino_id');
     }
-    function ruta(){
+    public function ruta(){
         return $this->hasMany('App\ruta');
     }
-    function pasajeros(){
+    public function pasajeros(){
         return $this->belongsToMany('App\pasajero','viajepasajero','viaje_id','pasajero_id');
     }
-    function tripulante(){
+    public function tripulante(){
         return $this->belongsTo('App\tripulante');
     }
-    function alertas(){
+    public function alertas(){
         return $this->hasMany('App\alerta');
     }
-    function bus(){
+    public function bus(){
         return $this->belongsTo('App\bus');
     }
-    function accidentes(){
+    public function accidentes(){
         return $this->hasMany('App\accidente');
     }
-    function buscarInformacion($aux){
+    public function buscarInformacion($aux){
         $bus = DB::table('bus')->where('Patente',$aux)->value('id');
         if($bus != null && $bus != '' && $bus != ' '){
             $viaje = DB::table('viaje')->where('bus_id',$bus)->value('id');
@@ -46,7 +46,7 @@ class viaje extends Model
             return null;
         }
     }
-    function llenarDetalles($aux){
+    public function llenarDetalles($aux){
         $bus = DB::table('bus')->where('Patente',$aux)->value('id');
         if($bus != null && $bus != '' && $bus != ' '){
             //['id'=>1, 'Patente'=>'BC-CL-35', 'CapacidadMax'=>40,'empresaDeBus_id'=>1]

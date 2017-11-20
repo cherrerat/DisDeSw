@@ -36,7 +36,7 @@
                     </div>
                     <hr>
                     <div class="label-input">
-                        {!! Form::submit('Ingresar', ['class' => 'btn btn-primary', 'id' => 'btnIngresar']) !!}
+                    <button type="button" class='btn btn-primary' id="btnIngresar">Ingresar</button>
                     </div>
                 {!! Form::close() !!}
                 </div>

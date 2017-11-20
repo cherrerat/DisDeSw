@@ -21,3 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/buscarInformacion', 'c_index@C_Buscar_Viaje');
 Route::post('/llenarDetalles', 'c_index@llenarDetalles');
 Route::post('/login','C_Usuario@C_VerificarUsuario');
+
+Route::post('/Vista','C_Usuario@vista');

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class usuario extends Model
 {
@@ -11,5 +12,16 @@ class usuario extends Model
     //Atributos del modelo
     protected $fillable = ['id', 'Patente', 'User','Password','Perfil'];
     //Funciones del modelo
-    
+    public function VerificarUsuario($user,$password){
+        $user1=DB::table('usuario')->where('User',$user)->first();
+        if($user1!=null){
+            if($password==$user1->Password){
+                return $user1->Perfil;
+            }else{
+                return "Contraseña";
+            }
+        }else{
+            return 'Usuario';
+        }
+    }
 }
