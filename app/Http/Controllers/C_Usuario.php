@@ -13,10 +13,12 @@ class C_Usuario extends Controller
         $pass=$request->Password;
         $usuario=new usuario;
         $aux1=$usuario->VerificarUsuario($user,$pass);
+        if($aux1=='Usuario' || $aux1=='Contraseña'){
+            $aux2=['aux'=>$aux1];
+            return view('index',$aux2);
+        }else{
+            return view($aux1);
+        }
         return $aux1;
-    }
-    public function vista(Request $request){
-        $perfil=$request->Perfil;
-        view($perfil);
     }
 }
