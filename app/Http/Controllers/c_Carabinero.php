@@ -82,4 +82,7 @@ class c_Carabinero extends Controller
     public function C_Ver_Detalles_Itinerario(Request $request){
         return view('CarabineroITBH');
     }
+    public function C_listarReporte(Request $request){
+        return view('CarabineroREVH');
+    }
 }

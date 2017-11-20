@@ -14,7 +14,7 @@
 @section('headerRuta')
   <div class="col-md-11 row">
     <h4 class="h4"><a href="">Carabineros de Chile</a> -> <a href="#">Busqueda pasajero</a></h4>
-    <button type="button" class="btn" id="volverMap">Volver</button>
+    <a href="/carabineros/vistaBus" id="refBus"><button type="buton" class="btn" id="btnVolver">Volver</button></a>
   </div>
 @endsection()
 @section('barraDeNavegacion')

@@ -139,7 +139,7 @@
                 <!-- /Data tables-->
             </div><!--Box body -->
             <div class="box-footer">
-                <button type="button" class="btn" id="btnVolver">Volver</button>
+            <a href="/carabineros/vistaPasajero" id="refBus"><button type="buton" class="btn" id="btnVolver">Volver</button></a>
             </div><!-- /Box footer-->
         </div><!-- /Box -->
     </div><!-- /Container principal -->

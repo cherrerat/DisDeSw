@@ -39,7 +39,7 @@
                     </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li  class="active"><a href="/carabineros/vistaBus"><i class="fa fa-circle-o"></i>Bus</a></li>
+                    <li><a href="/carabineros/vistaBus"><i class="fa fa-circle-o"></i>Bus</a></li>
                     <li><a href="/carabineros/vistaPasajero"><i class="fa fa-circle-o"></i>Pasajero</a></li>
                   </ul>
                 </li>
@@ -64,7 +64,7 @@
                     </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="/carabineros/vistaReporte"><i class="fa fa-circle-o"></i> Exceso de velocidad</a></li>
+                    <li  class="active"><a href="/carabineros/vistaReporte"><i class="fa fa-circle-o"></i> Exceso de velocidad</a></li>
                   </ul>
                 </li>
                 <li class="treeview">
@@ -162,7 +162,7 @@
             <!--/Box Body-->
             <!--Box Footer-->
             <div class="box-footer">
-                <button class="btn" id="btnVolver">Volver</button>
+            <a href="/carabineros/vistaReporte" id="refBus"><button type="buton" class="btn" id="btnVolver">Volver</button></a>
             </div>
             <!--/Box Footer-->
         </div>

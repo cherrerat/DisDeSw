@@ -102,19 +102,3 @@ $("#btnVolver").click(function(){
     $("#box-datos").hide();
     $("#Detalle").hide();
 });
-$("#btnIngresar").click(function(){
-    var user=document.getElementById('inputUsername').value;
-    var pass=document.getElementById('inputPassword').value;
-    $.post('http://127.0.0.1:8000/api/login',{User:user, Password:pass},function(match){
-        if(match=='Usuario'){
-            alert('Usuario incorrecto');
-        }else if(match=='Contraseña'){
-            alert('Contraseña incorrecta');
-        }else if(match=='Carabinero'){
-            $.post('http://127.0.0.1:8000/api/Vista',{Perfil:match},function (data) {
-                console.log(data);
-                });
-            //$(this).load('http://127.0.0.1:8000/api/Vista',match);
-        }
-    });
-});

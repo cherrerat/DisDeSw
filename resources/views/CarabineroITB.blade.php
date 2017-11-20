@@ -99,7 +99,7 @@
         <div class="col-md-11 form-group grupo">
             {!! Form::label('empresaBus', 'Empresa', ['class' => 'form-control-label col-sm-1']) !!}
             <div class="col-sm-3">
-                {!! Form::select('empresaBus', ['E1' => 'Tur Bus', 'E2' => 'Empresa 2', 'E3' => 'Empresa 3'], 'E1', ['class' => 'form-control input-sm']) !!}
+                {!! Form::select('empresaBus', ['E1' => 'Empresa 1'], 'E1', ['class' => 'form-control input-sm']) !!}
             </div>
             {!! Form::label('bus', 'Bus', ['class' => 'form-control-label col-sm-1']) !!}
             <div class="col-sm-3">

@@ -82,7 +82,7 @@
   <div class="col-md-10" id="infoCompletaChofer">
     <div class="box">
       <div class="box-header">
-        <h3 class="box-title">Datos tripulación viaje n°123</h3>
+        <h3 class="box-title">Datos tripulación viaje n°{!! $viaje !!}</h3>
       </div> <!-- box header -->
       <div class="box-body">
       {!! Form::open(['url' => 'carabineros/posicionBus', 'class' => 'form-horizontal']) !!}

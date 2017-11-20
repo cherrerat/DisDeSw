@@ -27,7 +27,7 @@ class Controller extends BaseController
         \App\pasajero::create($pasajero);
 
         //empresaDeBus [id, Rut, Nombre]
-        $empresaDeBus = ['id'=>1,'Rut'=>'27.111.111-1','Nombre'=>'Tur Bus'];
+        $empresaDeBus = ['id'=>1,'Rut'=>'27.111.111-1','Nombre'=>'Empresa 1'];
         \App\empresaDeBus::create($empresaDeBus);
 
         //tripulante [Run, Nombre, Apellido, Telefono, CantMultasAño, CantMultasTotal, HorasDeTrabajoDia, HorasDeTrabajoSemana, CargoPrincipal, InicioContrato, FinContrato, empresaDeBus_id]

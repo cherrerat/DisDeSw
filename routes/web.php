@@ -73,6 +73,10 @@ Route::group(['prefix'=>'/carabineros'], function(){
             'uses'=>'c_Carabinero@C_Ver_Detalles_Itinerario',
             'as'=>'detallesItinerario'
         ]);
+        Route::post('detallesReporte',[
+            'uses'=>'c_Carabinero@C_listarReporte',
+            'as'=>'detallesReporte'
+        ]);
     
     });
 Route::group(['prefix'=>'/usuario'], function(){

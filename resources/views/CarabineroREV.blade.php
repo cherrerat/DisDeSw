@@ -39,7 +39,7 @@
                     </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li  class="active"><a href="/carabineros/vistaBus"><i class="fa fa-circle-o"></i>Bus</a></li>
+                    <li><a href="/carabineros/vistaBus"><i class="fa fa-circle-o"></i>Bus</a></li>
                     <li><a href="/carabineros/vistaPasajero"><i class="fa fa-circle-o"></i>Pasajero</a></li>
                   </ul>
                 </li>
@@ -55,7 +55,7 @@
                     <li><a href="/carabineros/vistaItinerario"><i class="fa fa-circle-o"></i> Buses </a></li>
                   </ul>
                 </li>
-                <li class="treeview">
+                <li class="active treeview menu-open">
                   <a href="#">
                     <i class="fa fa-pie-chart"></i>
                     <span>Reporte</span>
@@ -63,8 +63,8 @@
                       <i class="fa fa-angle-left pull-right"></i>
                     </span>
                   </a>
-                  <ul class="active treeview menu-open">
-                    <li><a href="/carabineros/vistaReporte"><i class="fa fa-circle-o"></i> Exceso de velocidad</a></li>
+                  <ul class="treeview">
+                  <li class="active"><a href="/carabineros/vistaReporte"><i class="fa fa-circle-o"></i> Exceso de velocidad</a></li>
                   </ul>
                 </li>
                 <li class="treeview">
@@ -97,7 +97,7 @@
             <!-- /Box header -->
             <!-- Box body --> 
             <div class="box-body">
-                {!! Form::open(['url' => '', 'class' => 'form-horizontal']) !!}
+                {!! Form::open(['url' => 'carabineros/detallesReporte', 'class' => 'form-horizontal']) !!}
                 <div class="input-group" id="empresaInput">
                     {!! Form::label('empresa', 'Empresa', ['class' => 'control-label col-sm-3']) !!}
                     <div class="col-sm-5">
@@ -116,14 +116,14 @@
                     </div>     
                 </div>   
                 <div class="divBusqueda">
-                    <button type="button" class="btn btn-primary btnBS" id="btnBusqueda">Busqueda</button>
+                    <button type="submit" class="btn btn-primary btnBS" id="btnBusqueda">Busqueda</button>
                 </div>
                 {!! Form::close() !!}
             </div>
             <!--/Box body-->
             <!-- Box footer -->
             <div class="box-footer">    
-                <button class="btn" id="btnVolver">Volver</button>
+            <a href="/carabineros/vistaBus" id="refBus"><button type="buton" class="btn" id="btnVolver">Volver</button></a>
             </div>
             <!-- /Box footer -->
         </div>
