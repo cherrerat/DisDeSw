@@ -2,7 +2,19 @@ var mapa;
 var marker;
 var latlgn;
 $(document).ready(function(){ //finalizacion de ejecucion de la vista
-    iniciar();
+    if(document.getElementById('ubicacion')==null){
+        iniciar();
+    }else{
+        var aux=document.getElementById('ubicacion').value;
+        var newPos=aux.split(",");
+        
+        var lat = newPos[0].split("{lat: ");
+        var lng = newPos[1].split("lng: ");
+        //var bus = document.getElementById('datobusqueda').value;
+        lng[1] = lng[1].replace("}","");
+        newLatLng = new google.maps.LatLng(lat[1],lng[1]);
+        crearMapa(newLatLng);
+    }
 });
 function iniciar() {
     if(navigator.geolocation){

@@ -49,6 +49,10 @@ Route::group(['prefix'=>'/carabineros'], function(){
             'uses'=>'c_Carabinero@C_VerTripulacion',
             'as'=>'vistaTripulacion'
         ]);
+        Route::post('listarDetalles',[
+            'uses'=>'c_Carabinero@C_listarDetalles',
+            'as'=>'listarDetalles'
+        ]);
         Route::get('añadirPasajeros',[
             'uses'=>'c_Carabinero@añadirPasajerosTest',
             'as'=>'añadirPasajeros'
@@ -56,6 +60,10 @@ Route::group(['prefix'=>'/carabineros'], function(){
         Route::post('buscarPasajero',[
             'uses'=>'c_Carabinero@C_BuscarPasajero',
             'as'=>'buscarPasajero'
+        ]);
+        Route::post('detallesBus',[
+            'uses'=>'c_Carabinero@C_Ver_Detalles_Bus',
+            'as'=>'detallesBus'
         ]);
     
     });
@@ -71,4 +79,4 @@ Route::group(['prefix'=>'/usuario'], function(){
 //Rutas de testing y poblamiento de datos de prueba
 Route::get('rellenarDB','Controller@rellenarDB');
 
-Route::get('test/{bus}','c_index@C_Buscar_Viaje');
+Route::get('test/{bus}','c_Carabinero@C_BuscarPasajero');

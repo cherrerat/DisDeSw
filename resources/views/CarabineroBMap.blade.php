@@ -33,8 +33,8 @@
                     </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li  class="active"><a href="#"><i class="fa fa-circle-o"></i>Bus</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>Pasajero</a></li>
+                    <li  class="active"><a href="/carabineros/vistaBus"><i class="fa fa-circle-o"></i>Bus</a></li>
+                    <li><a href="/carabineros/vistaPasajero"><i class="fa fa-circle-o"></i>Pasajero</a></li>
                   </ul>
                 </li>
                 <li class="treeview">
@@ -46,7 +46,7 @@
                     </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Buses </a></li>
+                    <li><a href="/carabineros/vistaItinerario"><i class="fa fa-circle-o"></i> Buses </a></li>
                   </ul>
                 </li>
                 <li class="treeview">
@@ -58,7 +58,7 @@
                     </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Exceso de velocidad</a></li>
+                    <li><a href="/carabineros/vistaReporte"><i class="fa fa-circle-o"></i> Exceso de velocidad</a></li>
                   </ul>
                 </li>
                 <li class="treeview">
@@ -70,7 +70,7 @@
                     </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i>Listar tripulacion</a></li>
+                    <li><a href="/carabineros/vistaTripulacion"><i class="fa fa-circle-o"></i>Listar tripulacion</a></li>
                   </ul>
                 </li>
               </ul>
@@ -80,6 +80,7 @@
   
 @section('cuerpa')
   <div class="container col-md-11">
+  {{ Form::hidden('mapita', $latlng, ['id' => 'ubicacion']) }}
         <div class="box">
             <div class="box-header">
                 <h5 class="box-title">Ubicación en tiempo real</h5>
@@ -97,4 +98,5 @@
 @endsection
 
 @section('js')
+<script src="{{ URL::asset('js/CarabineroBMap.js') }}"></script>
 @endsection()

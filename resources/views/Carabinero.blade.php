@@ -86,17 +86,18 @@
         <h5 class="box-title">Busqueda de bus</h5>
     </div>
     <div class="box-body">
-        {!! Form::open(['url' => '', 'class' => 'form-horizontal']) !!}
+        {!! Form::open(['url' => 'carabineros/listarDetalles', 'class' => 'form-horizontal']) !!}
         <div class="form-group">
             <div class="col-sm-2">
                 {!! Form::select('formatoBusqueda', ['patente'=>'Patente', 'nviaje'=> 'N° viaje'],'patente', ['class'=>'form-control input-sm', 'id'=>'opbus']) !!}
             </div>
             <div class="col-sm-8">
-                {!! Form::text('datobusqueda', null, ['class' => 'form-control input-sm', 'id' => 'datobusqueda', 'placeholder' => 'Ingrese dato de busqueda']) !!}
+                {!! Form::text('datobusqueda', $value, ['class' => 'form-control input-sm', 'id' => 'datobusqueda', 'placeholder' => $placeholder]) !!}
             </div>
         </div>
-        <div class="form-group btnBusqueda">
-            <button type="button" class="btn btn-danger" id="btnB">Buscar</button>
+        <!--<div class="form-group btnBusqueda">-->
+        {!! Form::submit('Buscar', ['class' => 'btn btn-primary', 'id' => 'btnB']) !!}
+            <!--<button type="submit" class="btn btn-danger" id="btnB">Buscar</button>-->
         </div>
         {!! Form::close() !!}
     </div>

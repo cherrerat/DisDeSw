@@ -32,8 +32,8 @@
                     </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li  class="active"><a href="#"><i class="fa fa-circle-o"></i>Bus</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>Pasajero</a></li>
+                    <li  class="active"><a href="/carabineros/vistaBus"><i class="fa fa-circle-o"></i>Bus</a></li>
+                    <li><a href="/carabineros/vistaPasajero"><i class="fa fa-circle-o"></i>Pasajero</a></li>
                   </ul>
                 </li>
                 <li class="treeview">
@@ -45,7 +45,7 @@
                     </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Buses </a></li>
+                    <li><a href="/carabineros/vistaItinerario"><i class="fa fa-circle-o"></i> Buses </a></li>
                   </ul>
                 </li>
                 <li class="treeview">
@@ -57,7 +57,7 @@
                     </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Exceso de velocidad</a></li>
+                    <li><a href="/carabineros/vistaReporte"><i class="fa fa-circle-o"></i> Exceso de velocidad</a></li>
                   </ul>
                 </li>
                 <li class="treeview">
@@ -69,7 +69,7 @@
                     </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i>Listar tripulacion</a></li>
+                    <li><a href="/carabineros/vistaTripulacion"><i class="fa fa-circle-o"></i>Listar tripulacion</a></li>
                   </ul>
                 </li>
               </ul>
@@ -85,37 +85,38 @@
         <h3 class="box-title">Datos tripulación viaje n°123</h3>
       </div> <!-- box header -->
       <div class="box-body">
-      {!! Form::open(['url' => '', 'class' => 'form-horizontal']) !!}
+      {!! Form::open(['url' => 'carabineros/detallesBus', 'class' => 'form-horizontal']) !!}
       <div class="col-md-11 thumb-chofer">
         <img src="{{ URL::asset('img/user2-160x160.jpg') }}" alt="" class="img-thumbnail" id="imgChofer">
       </div>
       <div class="form-group col-md-11 grupo-de-input">
           {!! Form::label('nombreChofer', 'Nombre Chofer', ['class' => 'form-control-label col-sm-2'])!!}
           <div class="col-sm-2">
-              {!! Form::text('nombreChofer', null, ['class' => 'form-control input-sm', 'id' => 'nameChofer', 'readonly'])!!}
+              {!! Form::text('nombreChofer', $nombreChofer, ['class' => 'form-control input-sm', 'id' => 'nameChofer', 'readonly'])!!}
           </div>
           {!! Form::label('runC', 'Run del chofer', ['class' => 'form-control-label col-sm-2'])!!}
           <div class="col-sm-2">
-              {!! Form::text('runC', null, ['class' => 'form-control input-sm', 'id' => 'runChofer', 'readonly'])!!}
+              {!! Form::text('runC', $rutChofer, ['class' => 'form-control input-sm', 'id' => 'runChofer', 'readonly'])!!}
           </div>
       </div>
       <div class="form-group col-md-11 grupo-de-input">
           {!! Form::label('hi', 'Hora inicio viaje', ['class' => 'form-control-label col-sm-2'] ) !!}
           <div class="col-sm-2">
-              {!! Form::text('hi', null, ['class' => 'input-sm form-control', 'id' => 'horarioInicio', 'readonly'])!!}
+              {!! Form::text('hi', $horaI, ['class' => 'input-sm form-control', 'id' => 'horarioInicio', 'readonly'])!!}
           </div>
           {!! Form::label('hf', 'Hora final viaje', ['class' => 'form-control-label col-sm-2'])!!}
           <div class="col-sm-2">
-              {!! Form::text('hf', null, ['class' => 'datosViaje form-control', 'id' => 'horarioFinal', 'readonly'])!!}
+              {!! Form::text('hf', $horaF, ['class' => 'datosViaje form-control', 'id' => 'horarioFinal', 'readonly'])!!}
           </div>
       </div>
       <div class="form-group col-md-11 grupo-de-input">
           {!! Form::label('allegada', 'Anden de llegada', ['class' => 'form-control-label col-sm-2'])!!}
           <div class="col-sm-2">
-              {!! Form::text('allegada', null, ['class' => 'andenLlegada form-control', 'id' => 'andenDestino', 'readonly'])!!}
+              {!! Form::text('allegada', $anden, ['class' => 'andenLlegada form-control', 'id' => 'andenDestino', 'readonly'])!!}
+              {{ Form::hidden('invisible', $viaje, ['id' => 'viaje']) }}
           </div>
           <div class="col-sm-2">
-              <button type="button" class="btn btn-danger" id="mostrarMapa">Mostrar posición real</button>
+              <button type="submit" class="btn btn-danger" id="mostrarMapa">Mostrar posición real</button>
           </div>
       </div>
       {!! Form::close() !!}

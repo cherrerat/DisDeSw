@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use JavaScript;
+use App\viaje;
+use App\pasajero;
 
 class c_Carabinero extends Controller
 {
@@ -21,7 +23,10 @@ class c_Carabinero extends Controller
             'profugo'=>false]);
     }
     public function C_verBus(){
-        return view('Carabinero');
+        return view('Carabinero',[
+            'placeholder'=>'Ingrese datos de busqueda',
+            'value'=>''
+        ]);
     }
     public function C_verItinerario(){
         return view('CarabineroITB');
@@ -33,33 +38,37 @@ class c_Carabinero extends Controller
         return view('CarabineroTripulacion');
     }
     public function C_BuscarPasajero(Request $request){
-        if($request->formatoBusqueda == 'rpasajero'){
-            $pasajero = DB::table('pasajero')->where('rut',$request->datobusqueda)->first();
-            if($pasajero->antecedentes == ""){
-                return view('CarabineroPasajero',[
-                    'hidden'=>"",
-                    'placeholder'=>$pasajero->rut,
-                    'rut'=>$pasajero->rut,
-                    'nombre'=>"".$pasajero->nombre.' '.$pasajero->apellido,
-                    'origen'=>null,
-                    'destino'=>null,
-                    'hora'=>null,
-                    'anden'=>null,
-                    'profugo'=>false
-                    ]);
-            }else{
-                return view('CarabineroPasajero',[
-                    'hidden'=>"",
-                    'placeholder'=>$pasajero->rut,
-                    'rut'=>$pasajero->rut,
-                    'nombre'=>"".$pasajero->nombre.' '.$pasajero->apellido,
-                    'origen'=>null,
-                    'destino'=>null,
-                    'hora'=>null,
-                    'anden'=>null,
-                    'profugo'=>true
-                    ]);
-            }
+        $pasajero=new pasajero;
+        return view('CarabineroPasajero',$pasajero->buscarPasajero($request));
+    }
+    public function C_listarDetalles(Request $request){
+        $aux = $request->datobusqueda;
+        $viaje=new viaje;
+        $aux1 = $viaje->llenarDetalles($aux);
+        //['nombreChofer'=>$nombresito,'rutChofer'=>$tripulante->Run,'horaI'=>$viaje->HoraDeInicio,'horaF'=>$viaje->HoraDeDestino,'anden'=>$viaje->AndenDestino]
+        if($aux1!=null){
+            return view('CarabineroBD', [
+                'nombreChofer'=>array_get($aux1,'nombreChofer'),
+                'rutChofer'=>array_get($aux1,'rutChofer'),
+                'horaI'=>array_get($aux1,'horaI'),
+                'horaF'=>array_get($aux1,'horaF'),
+                'anden'=>array_get($aux1,'anden'),
+                'viaje'=>array_get($aux1,'viaje_id')
+            ]);
+        }else{
+            return view('Carabinero',[
+                'placeholder'=>'No encontrado',
+                'value'=>null
+            ]);
         }
+    }
+    public function C_Ver_Detalles_Bus(Request $request){
+        $aux=$request->invisible;
+        $viaje=new viaje;
+        $aux1=$viaje->Ver_Detalles_Bus($aux);
+        //dd(gettype($aux1));
+        return view('CarabineroBMap',[
+            'latlng'=>$aux1
+        ]);
     }
 }

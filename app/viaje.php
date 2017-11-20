@@ -56,10 +56,14 @@ class viaje extends Model
             //['id'=>3,'Run'=>'18.457.109-9','Nombre'=>'Cristian','Apellido'=>'Ordoñes','Telefono'=>228888888,'CantMultasAño'=>5,'CantMultasTotal'=>5,'HorasDeTrabajoDia'=>4,'HorasDeTrabajoSemana'=>20,'CargoPrincipal'=>'Chofer','InicioContrato'=>'2017-08-01','FinContrato'=>'2018-12-20','empresaDeBus_id'=>1]
 
             $nombresito=$tripulante->Nombre . ' ' . $tripulante->Apellido; //concadenacion de nombre + apellido
-            $aux1= ['nombreChofer'=>$nombresito,'rutChofer'=>$tripulante->Run,'horaI'=>$viaje->HoraDeInicio,'horaF'=>$viaje->HoraDeDestino,'anden'=>$viaje->AndenDestino]; //Array con datos solicitados
+            $aux1= ['nombreChofer'=>$nombresito,'rutChofer'=>$tripulante->Run,'horaI'=>$viaje->HoraDeInicio,'horaF'=>$viaje->HoraDeDestino,'anden'=>$viaje->AndenDestino,'viaje_id'=>$viaje->id]; //Array con datos solicitados
             return $aux1;
         }else{
             return null;
         }
+    }
+    public function Ver_Detalles_Bus($aux){
+        $ruta=DB::table('ruta')->where('viaje_id',$aux)->value('Camino');
+        return $ruta;
     }
 }
