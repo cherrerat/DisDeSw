@@ -112,9 +112,9 @@
           {{ Form::hidden('invisibleP', $pasajero_id, ['id' => 'pasajero_id']) }}
           {{ Form::hidden('invisibleP2', $viaje_id, ['id' => 'viaje_id']) }}
           </br><button type="submit" class="btn btn-danger" id="mostrarHistorial">Historial de viajes</button></br></br>
+          {!! Form::close() !!}
           <button type="button" class="btn btn-danger" id="mostrarMapa">Mostrar ubicacion</button></br>  
         </div>
-        {!! Form::close() !!}
       </div><!-- the body -->
       <div class="box-footer">
         <button type="button" class="btn" id="volverBusqueda">Volver</button>
@@ -126,3 +126,7 @@
   
 </div>
 @endsection
+
+@section('js')
+  <script src="{{ URL::asset('js/CabPas.js')}}"></script>
+@endsection 
