@@ -13,7 +13,9 @@
 
 //Ruta raiz
 Route::get('/', function () {
-    return view('index');
+    return view('index', [
+        'alert' => ''
+    ]);
 });
 
 //Rutas index

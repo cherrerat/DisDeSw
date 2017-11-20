@@ -122,3 +122,11 @@ body
 {
     margin-left: 15%;
 }
+#alertMessage 
+{
+    color: red;
+    border:none;
+    font-size: 2em;
+    background-color: transparent;
+    display: none;
+}

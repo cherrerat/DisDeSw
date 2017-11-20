@@ -2,6 +2,13 @@ var mapa;
 var marker;
 var latlgn;
 $(document).ready(function(){ //finalizacion de ejecucion de la vista
+    if((document).getElementById('alertMessage')!=null){
+        if((document).getElementById('alertMessage').value != ''){
+            $("#alertMessage").show();
+        }else{
+            $("#alertMessage").hide();
+        }
+    }
     if(document.getElementById('ubicacion')==null && document.getElementById('viaje_id') == null){
         iniciar();
     }

@@ -46,6 +46,7 @@
     <!--/Modal-->
     <!-- Main -->
     <div class="main align-middle">
+        {{ Form::text('alertaInvisible', $alert, ['id' => 'alertMessage', 'readonly']) }}
 		<div class="card rounded align-middle contenedorbusqueda">
             <h2 class="title titulo-centrado">Busqueda de bus</h2>
             <hr>
