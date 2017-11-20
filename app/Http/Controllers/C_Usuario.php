@@ -17,6 +17,6 @@ class C_Usuario extends Controller
     }
     public function vista(Request $request){
         $perfil=$request->Perfil;
-        return view($perfil);
+        view($perfil);
     }
 }

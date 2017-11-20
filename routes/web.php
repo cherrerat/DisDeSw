@@ -13,7 +13,7 @@
 
 //Ruta raiz
 Route::get('/', function () {
-    return view('index');
+    return view('Carabinero');
 });
 
 //Rutas index
@@ -30,15 +30,31 @@ Route::group(['prefix'=>'/index'],function(){
 Route::group(['prefix'=>'/carabineros'], function(){
     
         Route::get('vistaPasajero',[
-            'uses'=>'c_CarabineroPasajero@view',
+            'uses'=>'c_Carabinero@C_VerPasajero',
             'as'=>'vistaPasajero'
         ]);
+        Route::get('vistaBus',[
+            'uses'=>'c_Carabinero@C_VerBus',
+            'as'=>'vistaBus'
+        ]);
+        Route::get('vistaItinerario',[
+            'uses'=>'c_Carabinero@C_VerItinerario',
+            'as'=>'vistaItinerario'
+        ]);
+        Route::get('vistaReporte',[
+            'uses'=>'c_Carabinero@C_VerReporte',
+            'as'=>'vistaReporte'
+        ]);
+        Route::get('vistaTripulacion',[
+            'uses'=>'c_Carabinero@C_VerTripulacion',
+            'as'=>'vistaTripulacion'
+        ]);
         Route::get('añadirPasajeros',[
-            'uses'=>'c_CarabineroPasajero@añadirPasajerosTest',
+            'uses'=>'c_Carabinero@añadirPasajerosTest',
             'as'=>'añadirPasajeros'
         ]);
         Route::post('buscarPasajero',[
-            'uses'=>'c_CarabineroPasajero@buscarPasajero',
+            'uses'=>'c_Carabinero@C_BuscarPasajero',
             'as'=>'buscarPasajero'
         ]);
     
