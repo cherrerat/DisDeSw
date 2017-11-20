@@ -85,7 +85,7 @@
         <h3 class="box-title">Datos tripulación viaje n°123</h3>
       </div> <!-- box header -->
       <div class="box-body">
-      {!! Form::open(['url' => 'carabineros/detallesBus', 'class' => 'form-horizontal']) !!}
+      {!! Form::open(['url' => 'carabineros/posicionBus', 'class' => 'form-horizontal']) !!}
       <div class="col-md-11 thumb-chofer">
         <img src="{{ URL::asset('img/user2-160x160.jpg') }}" alt="" class="img-thumbnail" id="imgChofer">
       </div>

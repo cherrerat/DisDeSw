@@ -13,7 +13,7 @@
 
 //Ruta raiz
 Route::get('/', function () {
-    return view('Carabinero');
+    return view('index');
 });
 
 //Rutas index
@@ -61,9 +61,13 @@ Route::group(['prefix'=>'/carabineros'], function(){
             'uses'=>'c_Carabinero@C_BuscarPasajero',
             'as'=>'buscarPasajero'
         ]);
-        Route::post('detallesBus',[
+        Route::post('posicionBus',[
             'uses'=>'c_Carabinero@C_Ver_Detalles_Bus',
-            'as'=>'detallesBus'
+            'as'=>'posicionBus'
+        ]);
+        Route::post('historialPasajero',[
+            'uses'=>'c_Carabinero@C_listarViajes',
+            'as'=>'historialPasajero'
         ]);
     
     });

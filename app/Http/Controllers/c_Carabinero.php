@@ -20,7 +20,9 @@ class c_Carabinero extends Controller
             'destino'=>null,
             'hora'=>null,
             'anden'=>null,
-            'profugo'=>false]);
+            'profugo'=>false,
+            'pasajero_id'=>null,
+            'viaje_id'=>null]);
     }
     public function C_verBus(){
         return view('Carabinero',[
@@ -66,9 +68,14 @@ class c_Carabinero extends Controller
         $aux=$request->invisible;
         $viaje=new viaje;
         $aux1=$viaje->Ver_Detalles_Bus($aux);
-        //dd(gettype($aux1));
         return view('CarabineroBMap',[
             'latlng'=>$aux1
         ]);
+    }
+    public function C_listarViajes(Request $request){
+        $aux=$request->invisibleP;
+        $pasajero=new pasajero;
+        $aux1=$pasajero->listarViajes($aux);
+        return view('CarabineroHPasajero',$aux1);
     }
 }

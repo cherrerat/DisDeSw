@@ -99,22 +99,22 @@ class Controller extends BaseController
         //alerta ['id'=>,'Tipo'=>'','pasajero_id'=>,'viaje_id'=>,'tripulante_id'=>,]
 
         //viajepasajero ['viaje_id'=>,'pasajero_id'=>]
-        DB::table('viajepasajero')->insert(
+        DB::table('viajepasajero')->insert([
             ['viaje_id'=>1,'pasajero_id'=>1],
             ['viaje_id'=>1,'pasajero_id'=>2],
             ['viaje_id'=>2,'pasajero_id'=>3],
             ['viaje_id'=>2,'pasajero_id'=>4],
             ['viaje_id'=>3,'pasajero_id'=>5]
-        );
+        ]);
 
         //accidente ['id'=>,'viaje_id'=>,'bus_id'=>,'CantHeridos'=>,'CantMuertos'=>,'Ubicacion'=>'','Observacion'=>'']
 
         //viajeterminal ['viaje_id'=>,'origen_id'=>,'destino_id'=>]
-        DB::table('viajeterminal')->insert(
+        DB::table('viajeterminal')->insert([
             ['viaje_id'=>1,'origen_id'=>1,'destino_id'=>4],
             ['viaje_id'=>2,'origen_id'=>2,'destino_id'=>5],
             ['viaje_id'=>3,'origen_id'=>3,'destino_id'=>6]
-        );
+        ]);
 
         dd($bus);
     }

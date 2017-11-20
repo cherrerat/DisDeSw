@@ -89,10 +89,10 @@
   <div class="col-md-10" id="infoCompletaChofer">
     <div class="box" {!! $hidden !!}>
       <div class="box-header">
-        <h3 class="box-title">Datos pasajero viaje n°123</h3>
+        <h3 class="box-title">Datos pasajero viaje n° {!! $viaje_id !!}</h3>
       </div> <!-- box header -->
       <div class="box-body">
-        {!! Form::open(['url' => '', 'class' => 'form-horizontal']) !!}
+        {!! Form::open(['url' => 'carabineros/historialPasajero', 'class' => 'form-horizontal']) !!}
         <div class="input-group text-center">
           <img src="{{ URL::asset('img/user2-160x160.jpg') }}" alt="" class="img-thumbnail" id="imgChofer"></br>
           {!! Form::label('runP', 'RUN Pasajero: ')!!}
@@ -109,12 +109,14 @@
           {!! Form::text('allegada', $anden, ['id' => 'andenLlegada', 'readonly'])!!}
           {!! Form::label('profugo',null,['id' => 'andenLlegada']) !!}
           {!! Form::checkbox('profugo','value', $profugo, ['readonly', 'onclick' => 'return false;' ]) !!}</br>
-          <button type="button" class="btn btn-danger" id="mostrarMapa">Mostrar posición real</button></br> 
+          {{ Form::hidden('invisibleP', $pasajero_id, ['id' => 'pasajero_id']) }}
+          {{ Form::hidden('invisibleP2', $viaje_id, ['id' => 'viaje_id']) }}
+          </br><button type="submit" class="btn btn-danger" id="mostrarHistorial">Historial de viajes</button></br></br>
+          <button type="button" class="btn btn-danger" id="mostrarMapa">Mostrar ubicacion</button></br>  
         </div>
         {!! Form::close() !!}
       </div><!-- the body -->
       <div class="box-footer">
-        <button type="button" class="btn btn-primary" id="mostrarHistorial">Historial de viajes</button>
         <button type="button" class="btn" id="volverBusqueda">Volver</button>
       </div>
     </div>

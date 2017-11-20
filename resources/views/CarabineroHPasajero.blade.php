@@ -92,13 +92,13 @@
             <div class="box-body">
                 <div class="col-md-9" id="contenedorDatos">
                     {!! Form::label('namePasajero', 'Nombre de pasajero: ', ['class' => 'labelInput']) !!}
-                    {!! Form::text('namePasajero', null, ['class' => 'inputText form-control', 'id' => 'nombrePasajero', 'readonly']) !!}
-                    {!! Form::label('edad', 'Edad: ', ['class' => 'labelInputR']) !!}
-                    {!! Form::text('namePasajero', null, ['class' => 'numberInput form-control', 'id' => 'edadPasajero', 'readonly']) !!}</br>
-                    {!! Form::label('addressPasajero', 'Dirección pasajero: ', ['class' => 'labelInput']) !!}
-                    {!! Form::text('addressPasajero', null, ['class' => 'inputText form-control', 'id' => 'direccionPasajero', 'readonly']) !!}
+                    {!! Form::text('namePasajero', $nombre, ['class' => 'inputText form-control', 'id' => 'nombrePasajero', 'readonly']) !!}
+                    {!! Form::label('viajes', 'Viajes: ', ['class' => 'labelInputR']) !!}
+                    {!! Form::text('viajes', $viajes, ['class' => 'numberInput form-control', 'id' => 'viajesPasajero', 'readonly']) !!}</br>
+                    {!! Form::label('apellidoPasajero', 'Apellido pasajero: ', ['class' => 'labelInput']) !!}
+                    {!! Form::text('apellidoPasajero', $apellido, ['class' => 'inputText form-control', 'id' => 'apellidoPasajero', 'readonly']) !!}
                     {!! Form::label('profugo',null,['class' => 'labelInputR', 'id' => 'profugo']) !!}
-                    {!! Form::checkbox('profugo','value', true, ['class' => 'checkboxInput', 'onclick' => 'return false;' ]) !!}</br>
+                    {!! Form::checkbox('profugo','value', $profugo, ['class' => 'checkboxInput', 'onclick' => 'return false;' ]) !!}</br>
                 </div>
             </div><!-- /Box body -->
         </div><!-- /Box -->
@@ -106,7 +106,7 @@
     <div class="container col-md-11">
         <div class="box" id="boxPrincipal   ">
             <div class="box-header with-border" id="headerDelBox">
-                <h3 class="box-title">HISTORIAL DE VIAJES RUN XX.XXX.XXX-X</h3>
+                <h3 class="box-title">HISTORIAL DE VIAJES RUN {!! $Run !!}</h3>
                 <!--Busqueda en box-->
             </div><!-- Box header-->
             <div class="box-body" >
@@ -121,15 +121,15 @@
                         </thead>
                         <tbody>
                             <tr><!-- Cuerpo de la tabla-->
-                                <td>9.999.999-9</td>
-                                <td>Joe Doe</td>
+                                <td>{!! $Run !!}</td>
+                                <td>{!! $nombre.' '.$apellido !!}</td>
                                 <td>01-03-2018</td>
                                 <td>Santiago</td>
                                 <td>Concepción</td>
                             </tr> <!-- /Cuerpo de la tabla -->
                             <tr>
-                                <td>8.888.888-8</td>
-                                <td>Jane Doe</td>
+                                <td>{!! $Run !!}</td>
+                                <td>{!! $nombre.' '.$apellido !!}</td>
                                 <td>01-03-2018</td>
                                 <td>Concepción</td>
                                 <td>Santiago</td>
