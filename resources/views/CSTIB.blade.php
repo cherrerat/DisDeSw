@@ -79,7 +79,7 @@
             <!--/Box header-->
             <!--Box body-->
             <div class="box-body">
-            {!! Form::open(['url' => '', 'class' => 'form-horizontal']) !!}
+            {!! Form::open(['url' => '/detallesItinerario', 'class' => 'form-horizontal']) !!}
             <div class="col-md-11 form-group grupo">
                 {!! Form::label('empresaBus', 'Empresa', ['class' => 'form-control-label col-sm-1']) !!}
                 <div class="col-sm-3">
@@ -104,7 +104,7 @@
             <!--/Box body-->
             <!--Box footer-->
             <div class="box-footer">
-                <button type="button" class="btn" id="btnVolver">Volver</button>
+            <a href="//vistaBus" id="refBus"><button type="buton" class="btn" id="btnVolver">Volver</button></a>
             </div>
             <!--/Box footer-->
         </div>

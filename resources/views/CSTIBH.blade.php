@@ -130,7 +130,7 @@
             <!--/Box body-->
             <!--Box footer-->
             <div class="box-footer">
-                <button class="btn" id="btnVolver">Volver</button>
+            <a href="//vistaItinerario" id="refBus"><button type="buton" class="btn" id="btnVolver">Volver</button></a>
             </div>
             <!--/Box footer-->
         </div>

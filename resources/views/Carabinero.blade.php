@@ -98,7 +98,7 @@
         <!--<div class="form-group btnBusqueda">-->
         {!! Form::submit('Buscar', ['class' => 'btn btn-primary', 'id' => 'btnB']) !!}
             <!--<button type="submit" class="btn btn-danger" id="btnB">Buscar</button>-->
-        </div>
+        <!--</div>-->
         {!! Form::close() !!}
     </div>
 </div>

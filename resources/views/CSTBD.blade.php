@@ -106,6 +106,7 @@
                 {!! Form::label('allegada', 'Anden de llegada', ['class' => 'form-control-label col-sm-2'])!!}
                 <div class="col-sm-2">
                     {!! Form::text('allegada', null, ['class' => 'andenLlegada form-control', 'id' => 'andenDestino', 'readonly'])!!}
+                    {{ Form::hidden('invisible', $viaje, ['id' => 'viaje']) }}
                 </div>
                 <div class="col-sm-2">
                     <button type="button" class="btn btn-danger" id="mostrarMapa">Mostrar posición real</button>
@@ -116,7 +117,7 @@
             <!--/Box body-->
             <!--Box footer-->
             <div class="box-footer">
-                <button type="button" class="btn" id="btnVolver">Volver</button>
+                <a href="//vistaBus" id="refBus"><button type="buton" class="btn" id="btnVolver">Volver</button></a>
             </div>
             <!--/Box footer-->
         </div>

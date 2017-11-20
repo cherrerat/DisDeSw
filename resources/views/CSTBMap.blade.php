@@ -96,4 +96,5 @@
 
 <!-- JS Adicional -->
 @section('js')
+    <script src="{{ URL::asset('js/CSTBMap.js') }}"></script>
 @endsection()

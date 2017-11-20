@@ -88,9 +88,10 @@
                         {!! Form::text('datobusqueda', null, ['class' => 'form-control input-sm', 'id' => 'datobusqueda', 'placeholder' => 'Ingrese dato de busqueda']) !!}
                     </div>
                 </div>
-                <div class="form-group btnBusqueda">
+                <!--<div class="form-group btnBusqueda">
                     <button type="button" class="btn btn-danger" id="btnB">Buscar</button>
-                </div>
+                </div>-->
+            {!! Form::submit('Buscar', ['class' => 'btn btn-primary', 'id' => 'btnB']) !!}
             {!! Form::close() !!}
             </div>
             <!--/Box body-->
