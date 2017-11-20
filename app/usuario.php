@@ -14,6 +14,7 @@ class usuario extends Model
     //Funciones del modelo
     public function VerificarUsuario($user,$password){
         $user1=DB::table('usuario')->where('User',$user)->first();
+        //dd($user1);
         if($user1!=null){
             if($password==$user1->Password){
                 return $user1->Perfil;

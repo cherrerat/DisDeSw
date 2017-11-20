@@ -21,7 +21,7 @@
                 </div>
                 <div class="modal-body">
                 <hr>
-                {!! Form::open(['url' => '']) !!}
+                {!! Form::open(['url' => 'login']) !!}
                     <div class="form-group">
                         <div class="label-input">
                             {!! Form::label('username', 'Username', ['class' => 'form-control-label']) !!}
@@ -36,7 +36,7 @@
                     </div>
                     <hr>
                     <div class="label-input">
-                    <button type="button" class='btn btn-primary' id="btnIngresar">Ingresar</button>
+                    <button type="submit" class='btn btn-primary' id="btnIngresar">Ingresar</button>
                     </div>
                 {!! Form::close() !!}
                 </div>

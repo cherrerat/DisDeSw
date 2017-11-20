@@ -63,8 +63,8 @@
                       <i class="fa fa-angle-left pull-right"></i>
                     </span>
                   </a>
-                  <ul class="treeview">
-                  <li class="active"><a href="/carabineros/vistaReporte"><i class="fa fa-circle-o"></i> Exceso de velocidad</a></li>
+                  <ul class="treeview-menu">
+                    <li  class="active"><a href="/carabineros/vistaReporte"><i class="fa fa-circle-o"></i> Exceso de velocidad</a></li>
                   </ul>
                 </li>
                 <li class="treeview">
