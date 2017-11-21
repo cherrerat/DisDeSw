@@ -25,42 +25,42 @@
 
 <!-- Navegación -->
 @section('barraDeNavegacion')
-    <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">Navegación principal</li>
-        <li class="active treeview menu-open">
-            <a href="#"><span>Busqueda</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-            <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Bus</a></li>
-            </ul>
-        </li>
-        <li class="treeview">
-            <a href="#">
-            <span>Itinerario</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Buses </a></li>
-            </ul>
-        </li>
-        <li class="treeview">
-            <a href="#">
-            <span>Reporte</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Exceso de velocidad </a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Flujo de accidentes </a></li>
-            </ul>
-        </li>
-    </ul>
+<ul class="sidebar-menu" data-widget="tree">
+    <li class="header">Navegación principal</li>
+    <li class="active treeview menu-open">
+        <a href="#"><span>Busqueda</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+        </span>
+        </a>
+        <ul class="treeview-menu">
+        <li class="active"><a href="/conaset/vistaBus"><i class="fa fa-circle-o"></i>Bus</a></li>
+        </ul>
+    </li>
+    <li class="treeview">
+        <a href="#">
+        <span>Itinerario</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+        </span>
+        </a>
+        <ul class="treeview-menu">
+        <li><a href="/conaset/vistaItinerario"><i class="fa fa-circle-o"></i> Buses </a></li>
+        </ul>
+    </li>
+    <li class="treeview">
+        <a href="#">
+        <span>Reporte</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+        </span>
+        </a>
+        <ul class="treeview-menu">
+        <li><a href="vistaReporteV"><i class="fa fa-circle-o"></i> Exceso de velocidad </a></li>
+        <li><a href="vistaReporteA"><i class="fa fa-circle-o"></i> Flujo de accidentes </a></li>
+        </ul>
+    </li>
+</ul>
 @endsection()
 
 
@@ -73,43 +73,43 @@
         <div class="box">
             <!--Box header-->
             <div class="box-header">
-                <h3 class="box-title">Datos tripulación viaje n°123</h3>
+                <h3 class="box-title">Datos tripulación viaje n°{!! $viaje !!}</h3>
             </div>
             <!--/Box header-->
             <!--Box body-->
             <div class="box-body">
-            {!! Form::open(['url' => '', 'class' => 'form-horizontal']) !!}
+            {!! Form::open(['url' => 'conaset/posicionBus', 'class' => 'form-horizontal']) !!}
             <div class="col-md-11 thumb-chofer">
             <img src="{{ URL::asset('img/user2-160x160.jpg') }}" alt="" class="img-thumbnail" id="imgChofer">
             </div>
             <div class="form-group col-md-11 grupo-de-input">
                 {!! Form::label('nombreChofer', 'Nombre Chofer', ['class' => 'form-control-label col-sm-2'])!!}
                 <div class="col-sm-2">
-                    {!! Form::text('nombreChofer', null, ['class' => 'form-control input-sm', 'id' => 'nameChofer', 'readonly'])!!}
+                    {!! Form::text('nombreChofer', $nombreChofer, ['class' => 'form-control input-sm', 'id' => 'nameChofer', 'readonly'])!!}
                 </div>
                 {!! Form::label('runC', 'Run del chofer', ['class' => 'form-control-label col-sm-2'])!!}
                 <div class="col-sm-2">
-                    {!! Form::text('runC', null, ['class' => 'form-control input-sm', 'id' => 'runChofer', 'readonly'])!!}
+                    {!! Form::text('runC', $rutChofer, ['class' => 'form-control input-sm', 'id' => 'runChofer', 'readonly'])!!}
                 </div>
             </div>
             <div class="form-group col-md-11 grupo-de-input">
                 {!! Form::label('hi', 'Hora inicio viaje', ['class' => 'form-control-label col-sm-2'] ) !!}
                 <div class="col-sm-2">
-                    {!! Form::text('hi', null, ['class' => 'input-sm form-control', 'id' => 'horarioInicio', 'readonly'])!!}
+                    {!! Form::text('hi', $horaI, ['class' => 'input-sm form-control', 'id' => 'horarioInicio', 'readonly'])!!}
                 </div>
                 {!! Form::label('hf', 'Hora final viaje', ['class' => 'form-control-label col-sm-2'])!!}
                 <div class="col-sm-2">
-                    {!! Form::text('hf', null, ['class' => 'datosViaje form-control', 'id' => 'horarioFinal', 'readonly'])!!}
+                    {!! Form::text('hf', $horaF, ['class' => 'datosViaje form-control', 'id' => 'horarioFinal', 'readonly'])!!}
                 </div>
             </div>
             <div class="form-group col-md-11 grupo-de-input">
                 {!! Form::label('allegada', 'Anden de llegada', ['class' => 'form-control-label col-sm-2'])!!}
                 <div class="col-sm-2">
-                    {!! Form::text('allegada', null, ['class' => 'andenLlegada form-control', 'id' => 'andenDestino', 'readonly'])!!}
+                    {!! Form::text('allegada', $anden, ['class' => 'andenLlegada form-control', 'id' => 'andenDestino', 'readonly'])!!}
                     {{ Form::hidden('invisible', $viaje, ['id' => 'viaje']) }}
                 </div>
                 <div class="col-sm-2">
-                    <button type="button" class="btn btn-danger" id="mostrarMapa">Mostrar posición real</button>
+                    <button type="submit" class="btn btn-danger" id="mostrarMapa">Mostrar posición real</button>
                 </div>
             </div>
             {!! Form::close() !!}
@@ -117,7 +117,7 @@
             <!--/Box body-->
             <!--Box footer-->
             <div class="box-footer">
-                <a href="//vistaBus" id="refBus"><button type="buton" class="btn" id="btnVolver">Volver</button></a>
+            <a href="/conaset/vistaBus" id="refBus"><button type="buton" class="btn" id="btnVolver">Volver</button></a>
             </div>
             <!--/Box footer-->
         </div>

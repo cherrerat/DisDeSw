@@ -80,7 +80,44 @@ Route::group(['prefix'=>'/carabineros'], function(){
             'as'=>'detallesReporte'
         ]);
     
-    });
+});
+
+Route::group(['prefix'=>'/conaset'], function(){
+
+    Route::get('vistaBus',[
+        'uses'=>'C_CONASET@C_verBus',
+        'as'=>'vistaBus'
+    ]);
+    Route::post('listarDetalles',[
+        'uses'=>'C_CONASET@C_listarDetalles',
+        'as'=>'listarDetalles'
+    ]);
+    Route::post('posicionBus',[
+        'uses'=>'C_CONASET@C_Ver_Detalles_Bus',
+        'as'=>'posicionBus'
+    ]);
+    Route::get('vistaItinerario',[
+        'uses'=>'C_CONASET@C_VerItinerario',
+        'as'=>'vistaItinerario'
+    ]);
+    Route::get('vistaReporteV',[
+        'uses'=>'C_CONASET@C_verReporteV',
+        'as'=>'vistaReporteV'
+    ]);
+    Route::get('vistaReporteA',[
+        'uses'=>'C_CONASET@C_verReporteA',
+        'as'=>'vistaReporteA'
+    ]);
+    Route::get('vistaReporteAD',[
+        'uses'=>'C_CONASET@C_verReporteAD',
+        'as'=>'vistaReporteAD'
+    ]);
+    Route::post('buscarItinerario',[
+        'uses'=>'C_CONASET@C_buscarItinerario',
+        'as'=>'buscarItinerario'
+    ]);
+
+});
 
 Route::post('login',[
     'uses'=>'C_Usuario@C_VerificarUsuario',

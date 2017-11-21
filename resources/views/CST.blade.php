@@ -35,7 +35,7 @@
             </span>
             </a>
             <ul class="treeview-menu">
-            <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Bus</a></li>
+            <li class="active"><a href="/conaset/vistaBus"><i class="fa fa-circle-o"></i>Bus</a></li>
             </ul>
         </li>
         <li class="treeview">
@@ -46,7 +46,7 @@
             </span>
             </a>
             <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Buses </a></li>
+            <li><a href="/conaset/vistaItinerario"><i class="fa fa-circle-o"></i> Buses </a></li>
             </ul>
         </li>
         <li class="treeview">
@@ -57,8 +57,8 @@
             </span>
             </a>
             <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Exceso de velocidad </a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Flujo de accidentes </a></li>
+            <li><a href="vistaReporteV"><i class="fa fa-circle-o"></i> Exceso de velocidad </a></li>
+            <li><a href="vistaReporteA"><i class="fa fa-circle-o"></i> Flujo de accidentes </a></li>
             </ul>
         </li>
     </ul>
@@ -79,7 +79,7 @@
             <!--/Box header-->
             <!--Box body-->
             <div class="box-body">
-            {!! Form::open(['url' => '', 'class' => 'form-horizontal']) !!}
+            {!! Form::open(['url' => 'conaset/listarDetalles', 'class' => 'form-horizontal']) !!}
                 <div class="form-group">
                     <div class="col-sm-2">
                         {!! Form::select('formatoBusqueda', ['patente'=>'Patente', 'nviaje'=> 'N° viaje'],'patente', ['class'=>'form-control input-sm', 'id'=>'opbus']) !!}

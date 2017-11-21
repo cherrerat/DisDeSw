@@ -27,42 +27,42 @@
 
 <!-- Navegación -->
 @section('barraDeNavegacion')
-    <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">Navegación principal</li>
-        <li class="treeview">
-            <a href="#"><span>Busqueda</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i>Bus</a></li>
-            </ul>
-        </li>
-        <li class="treeview">
-            <a href="#">
-            <span>Itinerario</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Buses </a></li>
-            </ul>
-        </li>
-        <li class="active treeview menu-open">
-            <a href="#">
-            <span>Reporte</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Exceso de velocidad </a></li>
-            <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Flujo de accidentes </a></li>
-            </ul>
-        </li>
-    </ul>
+<ul class="sidebar-menu" data-widget="tree">
+    <li class="header">Navegación principal</li>
+    <li class="treeview">
+        <a href="#"><span>Busqueda</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+        </span>
+        </a>
+        <ul class="treeview-menu">
+        <li><a href="/conaset/vistaBus"><i class="fa fa-circle-o"></i>Bus</a></li>
+        </ul>
+    </li>
+    <li class="treeview">
+        <a href="#">
+        <span>Itinerario</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+        </span>
+        </a>
+        <ul class="treeview-menu">
+        <li><a href="/conaset/vistaItinerario"><i class="fa fa-circle-o"></i> Buses </a></li>
+        </ul>
+    </li>
+    <li class="active treeview menu-open">
+        <a href="#">
+        <span>Reporte</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+        </span>
+        </a>
+        <ul class="treeview-menu">
+        <li><a href="vistaReporteV"><i class="fa fa-circle-o"></i> Exceso de velocidad </a></li>
+        <li class="active"><a href="vistaReporteA"><i class="fa fa-circle-o"></i> Flujo de accidentes </a></li>
+        </ul>
+    </li>
+</ul>
 @endsection()
 
 
@@ -130,7 +130,7 @@
             <!--/Box body-->
             <!--Box footer-->
             <div class="box-footer">
-                <button class="btn" id="btnVolver">Volver</button>
+            <a href="/conaset/vistaReporteA" id="refBus"><button type="buton" class="btn" id="btnVolver">Volver</button></a>
             </div>
             <!--/Box footer-->
         </div>
