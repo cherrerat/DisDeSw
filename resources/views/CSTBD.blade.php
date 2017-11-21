@@ -106,7 +106,7 @@
                 {!! Form::label('allegada', 'Anden de llegada', ['class' => 'form-control-label col-sm-2'])!!}
                 <div class="col-sm-2">
                     {!! Form::text('allegada', $anden, ['class' => 'andenLlegada form-control', 'id' => 'andenDestino', 'readonly'])!!}
-                    {{ Form::hidden('invisible', $viaje, ['id' => 'viaje']) }}
+                    {{ Form::hidden('invisible', $latlng, ['id' => 'viaje']) }}
                 </div>
                 <div class="col-sm-2">
                     <button type="submit" class="btn btn-danger" id="mostrarMapa">Mostrar posición real</button>

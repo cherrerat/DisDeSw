@@ -1,5 +1,6 @@
 $(document).ready(function(){
-    var aux=document.getElementById('ubicacion').value;
+    var aux=document.getElementById('locationCST').value;
+    console.log(aux);
     var newPos=aux.split(",");
     var lat = newPos[0].split("{lat: ");
     var lng = newPos[1].split("lng: ");
