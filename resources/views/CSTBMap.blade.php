@@ -69,7 +69,7 @@
 @section('cuerpa')
     <!--Container-->
     <div class="container col-md-11">
-    {{ Form::hidden('invisible', $latlng, ['id' => 'locationCST']) }}
+    {{ Form::hidden('asd', $latlng, ['id' => 'locationCST']) }}
         <!--Box-->
         <div class="box">
             <!--Box header-->

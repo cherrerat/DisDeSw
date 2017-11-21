@@ -9,7 +9,7 @@ $(document).ready(function(){ //finalizacion de ejecucion de la vista
             $("#alertMessage").hide();
         }
     }
-    if(document.getElementById('ubicacion')==null && document.getElementById('viaje_id') == null){
+    if(document.getElementById('ubicacion')==null && document.getElementById('viaje_id') == null && document.getElementById('locationCST') == null){
         iniciar();
     }
 });
@@ -45,7 +45,6 @@ function buscarInformacion(bus){
     //                                                                  match seria el retorno del controller
     $.post('http://127.0.0.1:8000/api/buscarInformacion', {bus:bus}, function(match){
         var aux = match;
-        console.log(match);
         if(aux == '')
         {
             alert("Bus no encontrado");  
@@ -66,7 +65,6 @@ function buscarInformacion(bus){
 function rellenarDetalles(bus){
 
     $.post('http://127.0.0.1:8000/api/llenarDetalles', {bus:bus}, function(match){
-        console.log(match);
         var nombre = match.nombreChofer;
         var run = match.rutChofer;
         var anden = match.anden;
